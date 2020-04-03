@@ -2,6 +2,9 @@
 #include <cstdlib>
 #include <iostream>
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
 
 struct individuo{
 	int *binario;//vetor com apenas numeros binários
