@@ -4,18 +4,18 @@
 #include <stdio.h>
 
 struct individuo{
-	int *binario;//vetor com apenas numeros bin·rios
+	int *binario;//vetor com apenas numeros bin√°rios
 	double natural;//Serve para representar cada individuo como uma digital
-	double objetivo;//Serve para guardar o valor da funÁ„o objetivo
-    bool restricao;//Serve para saber se as restriÁıes foram satisfeitas
-    double aptidao;//Valor da funÁ„o objetivo com a aplicaÁ„o das penalidades
+	double objetivo;//Serve para guardar o valor da fun√ß√£o objetivo
+    bool restricao;//Serve para saber se as restri√ß√µes foram satisfeitas
+    double aptidao;//Valor da fun√ß√£o objetivo com a aplica√ß√£o das penalidades
 };
 
 struct variavel{
-	int tamanho;//guarda o tamanho de bits necessarios da vari·vel
-	int precisao;//guarda a precis„o desejada para essa vari·vel
-	double inferior;//Guarda o limite inferior da vari·vel
-	double superior;//Guarda o limite superior da vari·vel
+	int tamanho;//guarda o tamanho de bits necessarios da vari√°vel
+	int precisao;//guarda a precis√£o desejada para essa vari√°vel
+	double inferior;//Guarda o limite inferior da vari√°vel
+	double superior;//Guarda o limite superior da vari√°vel
 };
 //fim
 
@@ -50,9 +50,9 @@ void exibir(individuo pop[],int itamanho,int ptamanho){
 float AvaliaIndividuoAlveolar (float dminx, float dminy, float lx, float ly, float hmax,float bmax, float q, float gpr, float gpl, float cap, float cad, int ptamanho, int nxmax, int nymax, int nvv, int numgen, int k, int numpav,individuo pop[] )
 {
 
-// F                = FunÁ„o aptid„o
-// Custo total      = FunÁ„o objetivo (sem as restriÁıes)
-// k                = indica os indivÌduos a serem avaliados
+// F                = Fun√ß√£o aptid√£o
+// Custo total      = Fun√ß√£o objetivo (sem as restri√ß√µes)
+// k                = indica os indiv√≠duos a serem avaliados
 
 //Contadores inteiros
 
@@ -60,7 +60,7 @@ float AvaliaIndividuoAlveolar (float dminx, float dminy, float lx, float ly, flo
 
    int i,j,p;
    int apop[ptamanho][numgen];
-   //ptamanho neste caso  e numgen È o numero de cromossomos
+   //ptamanho neste caso  e numgen √© o numero de cromossomos
 
 
             for (j=0; j<numgen; j++)
@@ -97,40 +97,40 @@ float AvaliaIndividuoAlveolar (float dminx, float dminy, float lx, float ly, flo
    cpm[3]=233;
 
 //------------------------------------------------------------------------------------------------------------
-/*	             DefiniÁ„o Vari·veis lOCAIS
+/*	             Defini√ß√£o Vari√°veis lOCAIS
 
-	               Vari·veis de Projeto
+	               Vari√°veis de Projeto
 
-	         Vari·veis da configuraÁ„o estrutural
+	         Vari√°veis da configura√ß√£o estrutural
 */
 //------------------------------------------------------------------------------------------------------------
 
-	int nx,ny;     // N˙mero de v„os na direÁ„o X e Y	- VP
-	int dl;        // DireÁ„o da laje: 1 (direÁ„o Y) e 0 (direÁ„o X) - VP
+	int nx,ny;     // N√∫mero de v√£os na dire√ß√£o X e Y	- VP
+	int dl;        // Dire√ß√£o da laje: 1 (dire√ß√£o Y) e 0 (dire√ß√£o X) - VP
 	float ajx,ajy;
 
 //------------------------------------------------------------------------------------------------------------
 
-//	             Vari·veis Auxiliares
+//	             Vari√°veis Auxiliares
 
-	float llj,llv,rpilar;    // V„o da laje e v„o da viga E REACAO NO PILAR
-	float lp,sp;  		     //LP= Lado pilar SP=SE«√O DO PILAR
-	float ro;			     // TAXA A«O PILAR
-	float lljc;             // V„o da laje corrigido (descontado BV)
+	float llj,llv,rpilar;    // V√£o da laje e v√£o da viga E REACAO NO PILAR
+	float lp,sp;  		     //LP= Lado pilar SP=SE√á√ÉO DO PILAR
+	float ro;			     // TAXA A√áO PILAR
+	float lljc;             // V√£o da laje corrigido (descontado BV)
 
 //------------------------------------------------------------------------------------------------------------
 
-//	            Vari·veis do material
+//	            Vari√°veis do material
 
 
 
 	int fckml[4];                 // Fck moldado in loco
-    int fckpm[4];                 // Fck prÈ-moldado
+    int fckpm[4];                 // Fck pr√©-moldado
 	int	pm,cml;                //Contadores dos fcks - VP
 
 //------------------------------------------------------------------------------------------------------------
 
-//	          Vari·veis Quantidade PeÁas
+//	          Vari√°veis Quantidade Pe√ßas
 
 	int  qdp;
 	int  qdl, qdv;  // Qdes de viga, laje e pilar
@@ -138,7 +138,7 @@ float AvaliaIndividuoAlveolar (float dminx, float dminy, float lx, float ly, flo
 //------------------------------------------------------------------------------------------------------------
 
 
-//            Vari·veis dos custos
+//            Vari√°veis dos custos
 
 
 	float dop, cdop;                          // Despesas operacionais lajes
@@ -148,66 +148,66 @@ float AvaliaIndividuoAlveolar (float dminx, float dminy, float lx, float ly, flo
 //------------------------------------------------------------------------------------------------------------
 
 
-//	                 Vari·veis da Laje
-//	             Vari·veis de Projeto: VL
+//	                 Vari√°veis da Laje
+//	             Vari√°veis de Projeto: VL
 
 	int vl;                          // Caracteriza a laje
-	float hl[32], pa[32],apl[32];    // ForÁa Protens„o antes transferÍncia (MN)
-							         // ¡rea de Protens„o na Laje (m2)
+	float hl[32], pa[32],apl[32];    // For√ßa Protens√£o antes transfer√™ncia (MN)
+							         // √Årea de Protens√£o na Laje (m2)
 //------------------------------------------------------------------------------------------------------------
 
 
-//	             Vari·veis Auxiliares
+//	             Vari√°veis Auxiliares
 
-	float m,ac,ygc;                                 // relaÁ„o fcks, ·rea capa corrigida, cg sÁ composta
-	float ic;                                       // Momento inÈrcia sÁ composta
-	float yg[64],a[64],ii[64],xmax[64];             // dados seÁ„o isolada
-	float ep,epc,winf,wsup,wcinf,wcsup;             // excentricidades e mÛdulos LAJES
-	float carga[6],ml[6],rl[6];                     // Auxiliares c·lculo esforÁos
-	float mld,vld;                                  // Momento e cortante de c·lculo (faixa de 1.2m)
-	float tinf,tsup,tcinf,tcsup;                    // Tensıes na LAJE
-	float scp,spt,pt,pinf;                          // Auxiliares na protens„o
-	float tinpt,tsupt,tinpi,tsupi;	                // Tensıes protens„o
-	float tdesi,tdess,tti,tts,ttii,ttss,tmi,tms;    // tensıes atuantes transitÛrias
-	float des,ff,lcj,ltj,lck,ltk;                   // tensıes limites
+	float m,ac,ygc;                                 // rela√ß√£o fcks, √°rea capa corrigida, cg s√ß composta
+	float ic;                                       // Momento in√©rcia s√ß composta
+	float yg[64],a[64],ii[64],xmax[64];             // dados se√ß√£o isolada
+	float ep,epc,winf,wsup,wcinf,wcsup;             // excentricidades e m√≥dulos LAJES
+	float carga[6],ml[6],rl[6];                     // Auxiliares c√°lculo esfor√ßos
+	float mld,vld;                                  // Momento e cortante de c√°lculo (faixa de 1.2m)
+	float tinf,tsup,tcinf,tcsup;                    // Tens√µes na LAJE
+	float scp,spt,pt,pinf;                          // Auxiliares na protens√£o
+	float tinpt,tsupt,tinpi,tsupi;	                // Tens√µes protens√£o
+	float tdesi,tdess,tti,tts,ttii,ttss,tmi,tms;    // tens√µes atuantes transit√≥rias
+	float des,ff,lcj,ltj,lck,ltk;                   // tens√µes limites
 	float xtl,xl,zl,zla,zlb,mresl;                  // auxiliares elu
-	float bxl, ddl, penl;                           // beta x da laje, altura ˙til laje e penalidade laje
+	float bxl, ddl, penl;                           // beta x da laje, altura √∫til laje e penalidade laje
 	float cfi, cft, fi, ft, eil;                    // Contra-flecha e flecha das lajes
 
 //------------------------------------------------------------------------------------------------------------
 
-//	                Vari·veis da Viga
-//	              vari·veis de projeto: vv
+//	                Vari√°veis da Viga
+//	              vari√°veis de projeto: vv
 
 	int vv;
 	float hv[32],bv[32];                  // geometria da viga
 	float ht;                             // altura total do pavimento
-	int nmax[32];  	                      // qde m·x. de cordoalha por camada
+	int nmax[32];  	                      // qde m√°x. de cordoalha por camada
 	int ana,anb,nbaux;                    // qde de cordoalhas por camada
 	int na[16];
     int nb[16];
-	int npt[4];                           // qde de barras passivas de traÁ„o
+	int npt[4];                           // qde de barras passivas de tra√ß√£o
  	float bp[4];                          // bitolas passivas
 
 
 //------------------------------------------------------------------------------------------------------------
 
-//	               vari·veis auxiliares (geometria e tensıes)
+//	               vari√°veis auxiliares (geometria e tens√µes)
 
-	float av,ppv,me,ygv,iv;                    // ·rea, peso prÛprio, mom. est·tico,cg, m. inÈrcia
-	float avc,ppvc,mec,ygcv,ivc;               // dados sÁ composta
-	float epa,epb,epcv;                        // excentricidade sÁ isolada
-	float epca,epcb,epccv;                     // excentricidade sÁ composta
-	float da,db,apa,apb,as;                    // altura ˙til e ·rea de armaduras
-	float wvi,wvs,wcvi,wcvs;                   // mÛdulos resistentes
+	float av,ppv,me,ygv,iv;                    // √°rea, peso pr√≥prio, mom. est√°tico,cg, m. in√©rcia
+	float avc,ppvc,mec,ygcv,ivc;               // dados s√ß composta
+	float epa,epb,epcv;                        // excentricidade s√ß isolada
+	float epca,epcb,epccv;                     // excentricidade s√ß composta
+	float da,db,apa,apb,as;                    // altura √∫til e √°rea de armaduras
+	float wvi,wvs,wcvi,wcvs;                   // m√≥dulos resistentes
 	float mvt,mvpp,mvg,mvq,mvd;                // momentos
-	float tvi,tvs,tvppi,tvpps,tvgi,tvq;        // tensıes
+	float tvi,tvs,tvppi,tvpps,tvgi,tvq;        // tens√µes
 	float bxv,penv;                            // beta x viga e penalidade viga
 	int anpt,abp;						       // auxiliares contador
 
 //------------------------------------------------------------------------------------------------------------
 
-//				 Vari·veis auxiliares (protens„o)
+//				 Vari√°veis auxiliares (protens√£o)
 
 	float pav,soma,soma2,sptv,pat,soma3,pats,protsup;
 	float vtinpt,vtsupt,vpinf,vtinpi,vtsupi;
@@ -215,7 +215,7 @@ float AvaliaIndividuoAlveolar (float dminx, float dminy, float lx, float ly, flo
 	float tdiv,tdsv,ttiv,ttsv,ttiiv,ttssv,tmiv,tmsv;
 
 //------------------------------------------------------------------------------------------------------------
-//		     	vari·veis auxiliars (elu) / (els)
+//		     	vari√°veis auxiliars (elu) / (els)
 
 	float xv,za,zb,mresv;
 	float cfiv,cftv, fiv, ftv;
@@ -223,28 +223,28 @@ float AvaliaIndividuoAlveolar (float dminx, float dminy, float lx, float ly, flo
 
 //------------------------------------------------------------------------------------------------------------
 
-//			   vari·veis das restriÁıes
+//			   vari√°veis das restri√ß√µes
 
-	float gl[17];  //restriÁıes lajes
-	float gv[20];  //restriÁıes vigas
+	float gl[17];  //restri√ß√µes lajes
+	float gv[20];  //restri√ß√µes vigas
 
 //------------------------------------------------------------------------------------------------------------
 
 
-//		     	Vari·veis aptid„o / custos
+//		     	Vari√°veis aptid√£o / custos
 
 	float  vpmv,vpml,vpmp,vml,vapv,vapl,vadv;                            // volume dos materiais
 	float  custoconc, custoconcml,custoprot,custoad,custotal, custofab;  // custos material
 	float  custocis,custope,custolig;
-	float  pentotal;                                                     // somatÛrio penalidades
+	float  pentotal;                                                     // somat√≥rio penalidades
 	float  lpl,nlp,qdpl,ptal,lpv,nvp,qdpv,ptav;
 
 //------------------------------------------------------------------------------------------------------------
 
 //                  BANCO DE DADOS
 
-//		Listas das Vari·veis dos Materiais
-//            ResitÍncias Materiais (fcks)
+//		Listas das Vari√°veis dos Materiais
+//            Resit√™ncias Materiais (fcks)
 
 
 
@@ -260,20 +260,20 @@ float AvaliaIndividuoAlveolar (float dminx, float dminy, float lx, float ly, flo
 /*------------------------------------------------------------------------------------------------------------
   			        LISTAS LAJES
 
-       	  VinculaÁ„o da vari·vel VL das Lajes
-	       Propriedades geomÈtricas das Lajes
-			    PainÈis de b=1,20 m
+       	  Vincula√ß√£o da vari√°vel VL das Lajes
+	       Propriedades geom√©tricas das Lajes
+			    Pain√©is de b=1,20 m
 
-	 DefiniÁ„o propriedades da laje seÁ„o PM - T&A
+	 Defini√ß√£o propriedades da laje se√ß√£o PM - T&A
 				   Banco Dados - Laje*/
 
 	for(i=0;i<4;i++)
     {
 	hl[i]=0.09;	            // altura da laje(m)
-	a[i]=0.0669983;	        //·rea da laje (m2)
+	a[i]=0.0669983;	        //√°rea da laje (m2)
 	yg[i]=0.045;		    // cg da laje (m)
-	ii[i]=0.000063;		    // momento de inÈrcia da laje (m4)
-	xmax[i]=0.065;          // m·ximo x (ln)
+	ii[i]=0.000063;		    // momento de in√©rcia da laje (m4)
+	xmax[i]=0.065;          // m√°ximo x (ln)
 	}
 
 	for(i=4;i<9;i++)
@@ -282,7 +282,7 @@ float AvaliaIndividuoAlveolar (float dminx, float dminy, float lx, float ly, flo
 	a[i]=0.0918954;
 	yg[i]=0.06784;
 	ii[i]=0.00018;
-	xmax[i]=0.07;           // m·ximo valor do x (compress„o)
+	xmax[i]=0.07;           // m√°ximo valor do x (compress√£o)
 	}
 
 	for(i=9;i<15;i++)
@@ -327,11 +327,11 @@ float AvaliaIndividuoAlveolar (float dminx, float dminy, float lx, float ly, flo
 	}
 
 /*------------------------------------------------------------------------------------------------------------
-                	forÁa de protens„o (mn) - lajes
+                	for√ßa de protens√£o (mn) - lajes
 
                        pa=n.acor.1453.0,97.(10-6)
 
-                        sinal (-) / compress„o*/
+                        sinal (-) / compress√£o*/
 
       pa[0]=-0.184350828;
       pa[1]=-0.245801104;
@@ -368,7 +368,7 @@ float AvaliaIndividuoAlveolar (float dminx, float dminy, float lx, float ly, flo
 
 
 
-//	           ·rea de protens„o total no painel da laje
+//	           √°rea de protens√£o total no painel da laje
 
 
       apl[0]=0.0001308;
@@ -406,15 +406,15 @@ float AvaliaIndividuoAlveolar (float dminx, float dminy, float lx, float ly, flo
 
 //------------------------------------------------------------------------------------------------------------
 
-//      	    listas das vari·veis vigas
-//      	 qde de barras passivas de traÁ„o
+//      	    listas das vari√°veis vigas
+//      	 qde de barras passivas de tra√ß√£o
 
       npt[0]=0;
       npt[1]=2;
       npt[2]=4;
       npt[3]=6;
 
-//	    ·rea das bitolas passivas disponÌveis
+//	    √°rea das bitolas passivas dispon√≠veis
 
      	bp[0]=0.000028;   // 6.0mm
     	bp[1]=0.000050;	  // 8.0mm
@@ -461,7 +461,7 @@ float AvaliaIndividuoAlveolar (float dminx, float dminy, float lx, float ly, flo
 
 //------------------------------------------------------------------------------------------------------------
 
-//		caracterÌsticas geomÈtricas da viga
+//		caracter√≠sticas geom√©tricas da viga
 
 
       for(i=0; i<5; i++){
@@ -479,7 +479,7 @@ float AvaliaIndividuoAlveolar (float dminx, float dminy, float lx, float ly, flo
     	bv[i+20]=0.80;
 		bv[i+25]=0.90;
 
-    	nmax[i]=13;	            // qde m·xima de cordoalhas por base de viga
+    	nmax[i]=13;	            // qde m√°xima de cordoalhas por base de viga
     	nmax[i+5]=15;
     	nmax[i+10]=17;
     	nmax[i+15]=19;
@@ -487,7 +487,7 @@ float AvaliaIndividuoAlveolar (float dminx, float dminy, float lx, float ly, flo
 		nmax[i+25]=23;
 	  }
 
-//   complemento	das listas das vigas (32 possÌveis)
+//   complemento	das listas das vigas (32 poss√≠veis)
 
 		hv[30]=hv[28];
         bv[30]=bv[28];
@@ -500,15 +500,15 @@ float AvaliaIndividuoAlveolar (float dminx, float dminy, float lx, float ly, flo
 
 
 //
-//	               ROTINA PARA DECODIFICA«√O
+//	               ROTINA PARA DECODIFICA√á√ÉO
 //
-//	  Com: As vari·veis que comeÁam com "A" s„o auxiliares
+//	  Com: As vari√°veis que come√ßam com "A" s√£o auxiliares
 //
-//	  Com: Este "K" vem do Loop no programa principal (k=1 atÈ numind)
+//	  Com: Este "K" vem do Loop no programa principal (k=1 at√© numind)
 //
 
 
-	dl=apop[k][0];                                     // j· È o prÛprio valor
+	dl=apop[k][0];                                     // j√° √© o pr√≥prio valor
 
 	pm=2*apop[k][1]+1*apop[k][2];   // auxiliar
 
@@ -544,7 +544,7 @@ float AvaliaIndividuoAlveolar (float dminx, float dminy, float lx, float ly, flo
 
 	for(i=1; i<(nymax+1); i++)
     {
-             // a funÁ„o int arredonda pra baixo mas h· o nx+1;
+             // a fun√ß√£o int arredonda pra baixo mas h√° o nx+1;
 
 	ny=int(ny+apop[k][21+nxmax+i]*pow(2,(nymax-i)));
 
@@ -568,11 +568,11 @@ float AvaliaIndividuoAlveolar (float dminx, float dminy, float lx, float ly, flo
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !
-!                     REDU«√O DO DOMÕNIO DA BASE
+!                     REDU√á√ÉO DO DOM√çNIO DA BASE
 !
-!                   T…CNICA: ALTERAR O VALOR DE VV
+!                   T√âCNICA: ALTERAR O VALOR DE VV
 !
-!	EXISTE UM ESPA«O INFACTÕVEL MAS FAZ-SE TRANSFORMACAO NA LISTA
+!	EXISTE UM ESPA√áO INFACT√çVEL MAS FAZ-SE TRANSFORMACAO NA LISTA
 !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 */
@@ -645,9 +645,9 @@ float AvaliaIndividuoAlveolar (float dminx, float dminy, float lx, float ly, flo
 //------------------------------------------------------------------------------------------------------------
 /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !																		   !
-!							TRANSG NICO (NA x NB)
+!							TRANSG√äNICO (NA x NB)
 !
-!	           Troca por um fenÛtipo que melhor se adapte ao problema
+!	           Troca por um fen√≥tipo que melhor se adapte ao problema
 !																		   !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
@@ -666,24 +666,24 @@ ajx=lx/dminx;
                   }
 
 
-//       c·lculo dos v„os
+//       c√°lculo dos v√£os
 
 	llj=(lx/nx)*(1-dl)+(ly/ny)*(dl);		 // (m)
 	llv=(lx/nx)*(dl)+(ly/ny)*(1-dl);		 // (m)
 
 
 
-	lljc=llj-bv[vv];      // v„o laje corrigido (m)
+	lljc=llj-bv[vv];      // v√£o laje corrigido (m)
 
 
 /*------------------------------------------------------------------------------------------------------------
 !					LAJES ALVEOLARES
 !
-!		            Rotina de C·lculo
+!		            Rotina de C√°lculo
 !
-!	  Coment·rio: A traÁ„o tem sinal + e a compress„o -
+!	  Coment√°rio: A tra√ß√£o tem sinal + e a compress√£o -
 !
-!          DefiniÁ„o propriedades seÁ„o composta da Laje
+!          Defini√ß√£o propriedades se√ß√£o composta da Laje
 !		   Painel de b=1,2 m
 *------------------------------------------------------------------------------------------------------------*/
 
@@ -696,10 +696,10 @@ ajx=lx/dminx;
     ic=ii[vl]+a[vl]*pow((ygc-yg[vl]),2)+(m*1.2*(pow(0.05,3))/12)+ac*pow((hl[vl]+0.025-ygc),2);
 
 //------------------------------------------------------------------------------------------------------------
-//		 excentricidades e mÛdulos resistentes das lajes
+//		 excentricidades e m√≥dulos resistentes das lajes
 
-	ep=yg[vl]-0.012-0.006;	// (m) seÁ„o isolada, adotado cl=1,2cm
-	epc=ygc-0.012-0.006;	    // (m) seÁ„o composta
+	ep=yg[vl]-0.012-0.006;	// (m) se√ß√£o isolada, adotado cl=1,2cm
+	epc=ygc-0.012-0.006;	    // (m) se√ß√£o composta
 
 	winf=ii[vl]/yg[vl];
 	wsup=ii[vl]/(yg[vl]-hl[vl]);
@@ -707,11 +707,11 @@ ajx=lx/dminx;
 	wcsup=ic/(ygc-hl[vl]-0.05);
 
 //------------------------------------------------------------------------------------------------------------
-//       C·lculo dos momentos e tensıes nas Lajes
-//	        Com: C·lculo por painel (b=1.2m)
+//       C√°lculo dos momentos e tens√µes nas Lajes
+//	        Com: C√°lculo por painel (b=1.2m)
 //
 
-	carga[0]=a[vl]*2.5;	      // peso prÛprio laje (tf/m)
+	carga[0]=a[vl]*2.5;	      // peso pr√≥prio laje (tf/m)
 	carga[1]=0.125*1.2;       // peso capa (tf/m)
 	carga[2]=gpr*1.2;	      // pav+rev	  (tf/m)
 	carga[3]=gpl*1.2;	      // paredes sobre laje (tf/m)
@@ -722,37 +722,37 @@ ajx=lx/dminx;
 	{
 
 	ml[i]=carga[i]*pow(lljc,2)/8;	 // momento em tf.m/(b=1.2m)
-	rl[i]=carga[i]*(llj)/2  ;     // reaÁ„o/cortante (tf) por painel (b=1.2m)
+	rl[i]=carga[i]*(llj)/2  ;     // rea√ß√£o/cortante (tf) por painel (b=1.2m)
 	}
 
-//	   AÁıes de C·lculo por painel (MN.m e MN)
+//	   A√ß√µes de C√°lculo por painel (MN.m e MN)
 
-	mld=(1.3*ml[0]+1.4*(ml[1]+ml[2]+ml[3]+ml[4]))/100; // mom. de c·lculo  laje
-	vld=(1.3*rl[0]+1.4*(rl[1]+rl[2]+rl[3]+rl[4]))/100; // cortante de c·lc. laje
+	mld=(1.3*ml[0]+1.4*(ml[1]+ml[2]+ml[3]+ml[4]))/100; // mom. de c√°lculo  laje
+	vld=(1.3*rl[0]+1.4*(rl[1]+rl[2]+rl[3]+rl[4]))/100; // cortante de c√°lc. laje
 
 
-//         Tensıes Fase de concretagem (peÁa isolada)
+//         Tens√µes Fase de concretagem (pe√ßa isolada)
 //
 //		   Tf/100=MN
 
 	tinf=((ml[0]+ml[1]+ml[5])/winf)/100;   // (mpa)
 	tsup=((ml[0]+ml[1]+ml[5])/wsup)/100;	  // (mpa)
 
-//		Tensıes apÛs concretagem (seÁ„o composta)
+//		Tens√µes ap√≥s concretagem (se√ß√£o composta)
 
 	tcinf=((ml[2]+ml[3]+ml[4])/wcinf)/100;	// (mpa)
 	tcsup=((ml[2]+ml[3]+ml[4])/wcsup)/100;	// (mpa)
 
-//	  forÁa de protens„o
+//	  for√ßa de protens√£o
 
-//	  protens„o inicial - ato da transferÍncia (pa)
+//	  protens√£o inicial - ato da transfer√™ncia (pa)
 //
-//	pa=nc*acor*1453*0.97   // forÁa de protens„o inicial (mn)
+//	pa=nc*acor*1453*0.97   // for√ßa de protens√£o inicial (mn)
 //
 //	  nc*acor=pa/0.001409
 
 
-//	  protens„o apÛs transferÍncia (pt)
+//	  protens√£o ap√≥s transfer√™ncia (pt)
 
 	scp=(pa[vl]/a[vl])+pa[vl]*(pow(ep,2)/ii[vl]); // mpa (sinal -)
 
@@ -760,25 +760,25 @@ ajx=lx/dminx;
 
 	pt=pa[vl]-apl[vl]*spt;	// mn
 
-//	  restriÁ„o - tÈrmino da protens„o
+//	  restri√ß√£o - t√©rmino da protens√£o
 
 
 
-//	  protens„o tempo infinito (pinf)
+//	  protens√£o tempo infinito (pinf)
 
-	pinf=0.75*pa[vl];		 // perda estimada (75% da forÁa inicial)
+	pinf=0.75*pa[vl];		 // perda estimada (75% da for√ßa inicial)
 
-//	  tensıes devido ‡ protens„o
+//	  tens√µes devido √† protens√£o
 
-	tinpt=(pt/a[vl])+pt*(ep/winf);	  // tensıes na seÁ„o pm apÛs
-	tsupt=(pt/a[vl])+pt*(ep/wsup);	  // transferÍncia da protens„o
+	tinpt=(pt/a[vl])+pt*(ep/winf);	  // tens√µes na se√ß√£o pm ap√≥s
+	tsupt=(pt/a[vl])+pt*(ep/wsup);	  // transfer√™ncia da protens√£o
 
-	tinpi=(pinf/a[vl])+pinf*(ep/winf);  // tensıe na seÁ„o pm num tempo infinito
+	tinpi=(pinf/a[vl])+pinf*(ep/winf);  // tens√µe na se√ß√£o pm num tempo infinito
 	tsupi=(pinf/a[vl])+pinf*(ep/wsup);
 
-//        restriÁıes - verificaÁıes em vazio
+//        restri√ß√µes - verifica√ß√µes em vazio
 
-//         tensıes atuantes em vazio (mpa)
+//         tens√µes atuantes em vazio (mpa)
 
   	tdesi=tinpt+(ml[0]/winf)/100;     // desmoldagem inferior
 	tdess=tsupt+(ml[0]/wsup)/100;     // desmoldagem superior
@@ -789,31 +789,31 @@ ajx=lx/dminx;
 	tmi=tinpt+tinf;                   // montagem inferior
 	tms=tsupt+tsup; 		             // montagem superior
 
-//	  tensıes els  (mpa)
-//	 descompress„o
+//	  tens√µes els  (mpa)
+//	 descompress√£o
 
 	des=((ml[0]+ml[1])/winf)/100+tinpi+((ml[2]+ml[3])/wcinf)/100+0.3*(ml[4]/wcinf)/100;
 
-//	 formaÁ„o de fissura (mpa)
+//	 forma√ß√£o de fissura (mpa)
 
 	ff=((ml[0]+ml[1])/winf)/100+tinpi+((ml[2]+ml[3])/wcinf)/100+0.4*(ml[4]/wcinf)/100;
 
-//		tensıes limites
+//		tens√µes limites
 
-	lcj=0.49*fckpm[pm];                 // limite compress„o fckj (transitÛria)
-	ltj=1.2*0.7*0.3*pow((0.7*fckpm[pm]),(2/3)); // limite traÁ„o fckj
+	lcj=0.49*fckpm[pm];                 // limite compress√£o fckj (transit√≥ria)
+	ltj=1.2*0.7*0.3*pow((0.7*fckpm[pm]),(2/3)); // limite tra√ß√£o fckj
 
-	lck=0.7*fckpm[pm];                // limite compress„o fck   (els)
-	ltk=1.2*0.7*0.3*pow((fckpm[pm]),(2/3)); // limite traÁ„o fck / seÁ„o "t" (els)
+	lck=0.7*fckpm[pm];                // limite compress√£o fck   (els)
+	ltk=1.2*0.7*0.3*pow((fckpm[pm]),(2/3)); // limite tra√ß√£o fck / se√ß√£o "t" (els)
 
 //
-//		 solicitaÁıes normais - elu	(lajes alveolares)
+//		 solicita√ß√µes normais - elu	(lajes alveolares)
 //
-//	 obs: ser· testada a roti na que n„o necessita do c·lculo do prÈ
+//	 obs: ser√° testada a roti na que n√£o necessita do c√°lculo do pr√©
 //		  alongamento
 //
 
-	ddl=(hl[vl]+0.03875);  // altura ˙til da laje simplificada
+	ddl=(hl[vl]+0.03875);  // altura √∫til da laje simplificada
 
 	xtl=2551.05*apl[vl]/fckml[cml]; // para o painel b=1.2m
 
@@ -840,7 +840,7 @@ ajx=lx/dminx;
 //                     ROTINA FLECHAS EM LAJES							  //
 //																		  //
 /////////////////////////////////////////////////////////////////////////////
-//                     CONTRA-FLECHA (PROTENS√O)
+//                     CONTRA-FLECHA (PROTENS√ÉO)
 
 	cfi=(pa[vl]*ep*lljc)/(8*4760*pow(fckpm[pm],0.5)*ii[vl]); // contra-flecha inicial
 
@@ -851,7 +851,7 @@ ajx=lx/dminx;
 
 	fi=3*(carga[0]+carga[1]+carga[2]+carga[3]+0.3*carga[4])*pow(lljc,4)/100;
 
-	eil=(384*4760*pow(fckpm[pm],0.5)*ic);   // flecha inicial (sÁ composta)
+	eil=(384*4760*pow(fckpm[pm],0.5)*ic);   // flecha inicial (s√ß composta)
 
 
 
@@ -860,12 +860,12 @@ ajx=lx/dminx;
 
 
 //
-//		RESTRI«’ES
+//		RESTRI√á√ïES
 //
-//	  RestriÁıes estado vazio - Inferior (comprimida)
-// 		Em mÛdulo p compensar o sinal (-) compress„o
+//	  Restri√ß√µes estado vazio - Inferior (comprimida)
+// 		Em m√≥dulo p compensar o sinal (-) compress√£o
 //
-// Obs: Alguns valores referÍncias s„o multiplicados p aumentar a margem
+// Obs: Alguns valores refer√™ncias s√£o multiplicados p aumentar a margem
 //
 
 	if (fabs(tdesi)<=lcj)
@@ -889,8 +889,8 @@ ajx=lx/dminx;
 	                     else
 						 gl[3]=fabs(tmi/lcj)-1;
 
-//	  restriÁıes em vazio - superior (tracionada)
-//		  n„o precisa ser em mÛdulo
+//	  restri√ß√µes em vazio - superior (tracionada)
+//		  n√£o precisa ser em m√≥dulo
 
 	if (tdess<=(2*ltj))
 	                  gl[4]=0;
@@ -918,24 +918,24 @@ ajx=lx/dminx;
 					gl[7]=fabs(tms/(2*ltj))-1;
 
 
-//		  els - descompress„o e formaÁ„o de fissura
+//		  els - descompress√£o e forma√ß√£o de fissura
 
 	if (des<=0)
-	              gl[8]=0;			   // els - descompress„o
+	              gl[8]=0;			   // els - descompress√£o
               else
 				  gl[8]=des;
 
 
-	if (ff<=(2*ltk))               // limite traÁ„o jem
-	               gl[9]=0;		   // els -formaÁ„o fissura
+	if (ff<=(2*ltk))               // limite tra√ß√£o jem
+	               gl[9]=0;		   // els -forma√ß√£o fissura
 	               else
 				   gl[9]=(ff/(2*ltk))-1;
 
 
-//	   restriÁ„o do x dentro da peÁa (acima dos alvÈolos)
+//	   restri√ß√£o do x dentro da pe√ßa (acima dos alv√©olos)
 
 	if (xl<=xmax[vl])
-	                    gl[10]=0;		   // restriÁ„o x (dentro laje)
+	                    gl[10]=0;		   // restri√ß√£o x (dentro laje)
 	                    else
        					gl[10]=(xl/xmax[vl])-1;
 
@@ -943,12 +943,12 @@ ajx=lx/dminx;
 //		elu e beta x
 
 	if (mresl>=mld)
-	                  gl[11]=0;	           	// restriÁ„o momento
+	                  gl[11]=0;	           	// restri√ß√£o momento
 	                  else
 					  gl[11]=(mld/mresl)-1;
 
 
-	bxl=xl/ddl;						 // beta x laje: ser„o aceitos domÌnios 2 e 3
+	bxl=xl/ddl;						 // beta x laje: ser√£o aceitos dom√≠nios 2 e 3
 
 	if (bxl>0)
 	                  gl[12]=0;
@@ -966,9 +966,9 @@ ajx=lx/dminx;
 	                                      gl[14]=0;
 	                                      else
 										  gl[14]=((dminx*(1-dl)+dminy*(dl))/llj)-1;
-// dist‚ncia mÌnima entre pilares
+// dist√¢ncia m√≠nima entre pilares
 
-	//           verificaÁ„o flechas
+	//           verifica√ß√£o flechas
 
 	if ((ft+cft)<=(1.05*llj/250))      // margem para o deslocamento
 	                                gl[15]=0;
@@ -976,7 +976,7 @@ ajx=lx/dminx;
 									gl[15]=((ft+cft)/(1.05*llj/250))-1;
 
 //
-//	 restriÁ„o de relaÁ„o v„o/altura laje (bijan)
+//	 restri√ß√£o de rela√ß√£o v√£o/altura laje (bijan)
 //
 	if ((llj/(hl[vl]+0.05))<=45)
     gl[16]=0;
@@ -984,7 +984,7 @@ ajx=lx/dminx;
     gl[16]=((llj/(hl[vl]+0.05))/45)-1;
 
 //
-//	   somatÛrio penalidades lajes
+//	   somat√≥rio penalidades lajes
 //
 
 	penl=gl[0]+gl[1]+gl[2]+gl[3]+gl[4]+gl[5]+gl[6]+gl[7]+gl[8]+gl[9]+gl[10]+gl[11]+gl[12]+gl[13]+gl[14]+gl[15]+gl[16];
@@ -992,33 +992,33 @@ ajx=lx/dminx;
 //
 //			  VIGA "T" INVERTIDA
 //
-//	           Rotina de C·lculo
+//	           Rotina de C√°lculo
 //
 //
-//	 Propriedades geomÈtricas Viga isolada
+//	 Propriedades geom√©tricas Viga isolada
 //
-    	av=((bv[vv]+0.3)*hv[vv])+(bv[vv]*(hl[vl]-0.05)); // ·rea viga (isolada) m2
+    	av=((bv[vv]+0.3)*hv[vv])+(bv[vv]*(hl[vl]-0.05)); // √°rea viga (isolada) m2
     	ppv=av*2.5;                                      // pp viga tf/m
 
-	    me=((bv[vv]+0.3)*(pow(hv[vv],2))/2)+bv[vv]*(hl[vl]-0.05)*(hv[vv]+(hl[vl]-0.05)/2);						// momento est·tico
+	    me=((bv[vv]+0.3)*(pow(hv[vv],2))/2)+bv[vv]*(hl[vl]-0.05)*(hv[vv]+(hl[vl]-0.05)/2);						// momento est√°tico
 
 	    ygv=me/av;                                       // cg viga isolada
 
-//	 momento inÈrcia viga isolada
+//	 momento in√©rcia viga isolada
 
 	iv=(bv[vv]+0.30)*pow(hv[vv],3)/12+(bv[vv]+0.30)*hv[vv]*pow(((hv[vv]/2)-ygv),2)+bv[vv]*pow((hl[vl]-0.05),3)/12+bv[vv]*(hl[vl]-0.05)*pow((hv[vv]+((hl[vl]-0.05)/2)-ygv),2);
 
-//	  propriedades seÁ„o composta
+//	  propriedades se√ß√£o composta
 
-	avc=av+bv[vv]*0.10; //·rea seÁ„o composta m2
+	avc=av+bv[vv]*0.10; //√°rea se√ß√£o composta m2
 
 	mec=((bv[vv]+0.3)*pow(hv[vv],2)/2)+bv[vv]*(hl[vl]-0.05)*(hv[vv]+(hl[vl]-0.05)/2)+ bv[vv]*0.10*(hv[vv]+hl[vl]+0.05);
 
 	ygcv=mec/avc;
 
-    ppvc=ppv+(bv[vv]*0.10*2.5);  // pp viga seÁ„o composta (tf/m)
+    ppvc=ppv+(bv[vv]*0.10*2.5);  // pp viga se√ß√£o composta (tf/m)
 
-//	 momento inÈrcia seÁ„o composta
+//	 momento in√©rcia se√ß√£o composta
 
 	ivc=(bv[vv]+0.30)*pow(hv[vv],3)/12+(bv[vv]+0.30)*hv[vv]*pow(((hv[vv]/2)-ygcv),2)+bv[vv]*pow((hl[vl]+0.05),3)/12+bv[vv]*(hl[vl]+0.05)*pow((hv[vv]+((hl[vl]+0.05)/2)-ygcv),2);
 
@@ -1031,7 +1031,7 @@ ajx=lx/dminx;
         epca=ygcv-0.05;
         epcb=ygcv-0.10;
 
-//	  mÛdulo resistente
+//	  m√≥dulo resistente
 
 
 
@@ -1041,20 +1041,20 @@ ajx=lx/dminx;
     wcvs=ivc/(ygcv-(hv[vv]+hl[vl]+0.05));
 
 
-//	 momentos e tensıes (verificaÁ„o transitÛria na fase de montagem)
+//	 momentos e tens√µes (verifica√ß√£o transit√≥ria na fase de montagem)
 
-	mvt=(((rl[0]+rl[1])/1.2)*2+ppv)*pow(llv,2)/8;	// momento transitÛrio (tf.m)
+	mvt=(((rl[0]+rl[1])/1.2)*2+ppv)*pow(llv,2)/8;	// momento transit√≥rio (tf.m)
 	                                            // pp e capa + ppviga
 
 	tvi=mvt/(100*wvi);
-    tvs=mvt/(100*wvs);   // tensıes na seÁ„o isolada (mpa)
+    tvs=mvt/(100*wvs);   // tens√µes na se√ß√£o isolada (mpa)
 
 
-//	 momentos e tensıes verificaÁ„o transitÛria somente devido ao peso prÛprio
+//	 momentos e tens√µes verifica√ß√£o transit√≥ria somente devido ao peso pr√≥prio
 
 	mvpp=(ppv*pow(llv,2))/8;	 // momento devido ao pp da viga	(tf.m)
 
-	tvppi=mvpp/(100*wvi);// tensıes devido ao pp da viga	(mpa)
+	tvppi=mvpp/(100*wvi);// tens√µes devido ao pp da viga	(mpa)
 
 	tvpps=mvpp/(100*wvs);
 
@@ -1064,27 +1064,27 @@ ajx=lx/dminx;
 
 //	tvpar=mvpar/(100*wcvi)
 
-//	 momentos e tensıes durante vida ˙til (els)
+//	 momentos e tens√µes durante vida √∫til (els)
 //
 //  com: divide por 1.2 p/ calcular carga por metro na viga
 //
-//  com: multiplica por 2 p/ considerar a contribuiÁ„o dos dois lados de lajes
+//  com: multiplica por 2 p/ considerar a contribui√ß√£o dos dois lados de lajes
 //
 
 	mvg=(((rl[2]+rl[3])/1.2)*2)*pow(llv,2)/(2*8); // tf.m / pav+rev+paredes na laje
 
 	mvq=(rl[4]/1.2)*2*pow(llv,2)/(2*8);   // tf.m / sobre-carga (q)
 
-	tvgi=mvg/(wcvi*100);	// tensıes devido pav+rev+par rel. ‡ sÁ composta(mpa)
+	tvgi=mvg/(wcvi*100);	// tens√µes devido pav+rev+par rel. √† s√ß composta(mpa)
 
-	tvq=mvq/(wcvi*100);	// tensıes devido ‡ sc (q) rel. ‡ sÁ composta (mpa)
+	tvq=mvq/(wcvi*100);	// tens√µes devido √† sc (q) rel. √† s√ß composta (mpa)
 
-//	 c·lculo momento de c·lculo
+//	 c√°lculo momento de c√°lculo
 
-	mvd=(((1.3*rl[0]+1.4*rl[1]+1.4*(rl[2]/2)+1.4*(rl[3]/2)+1.4*(rl[4]/2))*(2/1.2)+1.3*ppv)*pow((llv-lp),2)/8)/100;		// momento de c·lculo mn.m
+	mvd=(((1.3*rl[0]+1.4*rl[1]+1.4*(rl[2]/2)+1.4*(rl[3]/2)+1.4*(rl[4]/2))*(2/1.2)+1.3*ppv)*pow((llv-lp),2)/8)/100;		// momento de c√°lculo mn.m
 
 //
-//	reaÁıes nos pilares
+//	rea√ß√µes nos pilares
 //
 
   rpilar=((rl[0]+rl[1]+rl[2]+rl[3]+rl[4])*(2/1.2)+ppv)*llv*numpav*1.02;  // [tf]
@@ -1111,12 +1111,12 @@ ajx=lx/dminx;
 
 
 //
-//	  protens„o em vigas
+//	  protens√£o em vigas
 //
 
-//	  protens„o na pista (mn)
+//	  protens√£o na pista (mn)
 
-	pav=-0.97*(na[ana]+nb[anb])*0.0001014*1453;   // mn	(sinal - / compress„o)
+	pav=-0.97*(na[ana]+nb[anb])*0.0001014*1453;   // mn	(sinal - / compress√£o)
 
 	soma=(na[ana]*epa+nb[anb]*epb)*0.97*0.0001014*1453*(-1); //(sinal -)
 
@@ -1124,7 +1124,7 @@ ajx=lx/dminx;
 
 	sptv=(-1)*((pav/av)+(soma/wvi))+(40.966/pow(fckpm[pm],0.5))*((pav/av)+(soma2/iv));
 
-//	 protens„o apÛs trasnferÍncia (mn)
+//	 protens√£o ap√≥s trasnfer√™ncia (mn)
 
 	pat=pav-(na[ana]+nb[anb])*0.0001014*sptv;
 
@@ -1135,7 +1135,7 @@ ajx=lx/dminx;
 
 	vtsupt=(pat/av)+(soma3/wvs);
 
-//	 protens„o em um tempo infinito (mn)
+//	 protens√£o em um tempo infinito (mn)
 
 	vpinf=0.8*pav;	  // perda estimada (20%)
 
@@ -1144,24 +1144,24 @@ ajx=lx/dminx;
 	vtsupi=(vpinf/av)+(0.8*soma/wvs);
 
 
-//		tensıes limites
+//		tens√µes limites
 
-//	lcj=0.49*fckpm(pm)                 // limite compress„o fckj (transitÛria)
-	ltjv=1.5*0.7*0.3*pow((0.7*fckpm[pm]),(2/3)); // limite traÁ„o fckj(retangular)
+//	lcj=0.49*fckpm(pm)                 // limite compress√£o fckj (transit√≥ria)
+	ltjv=1.5*0.7*0.3*pow((0.7*fckpm[pm]),(2/3)); // limite tra√ß√£o fckj(retangular)
 
-//	lck=0.7*fckpm(pm)                // limite compress„o fck   (els)
-	ltkv=1.5*0.7*0.3*pow(fckpm[pm],(2/3)); // limite traÁ„o fck   (els)
-
-
+//	lck=0.7*fckpm(pm)                // limite compress√£o fck   (els)
+	ltkv=1.5*0.7*0.3*pow(fckpm[pm],(2/3)); // limite tra√ß√£o fck   (els)
 
 
-//	   tensıes els (mpa)
+
+
+//	   tens√µes els (mpa)
 
 	descompv=tvi+tvgi+0.3*tvq+vtinpi;
 	ffissv=tvi+tvgi+0.4*tvq+vtinpi;
 
 //
-//		tensıes atuantes nas fases transitÛrias
+//		tens√µes atuantes nas fases transit√≥rias
 //
 
 	tdiv=vtinpt+tvppi;	// desmoldagem inferior
@@ -1175,7 +1175,7 @@ ajx=lx/dminx;
 
 /////////////////////////////////////////////////////
 //
-//				  PROTENS√O SUPERIOR (Considerado apenas na transitÛria)
+//				  PROTENS√ÉO SUPERIOR (Considerado apenas na transit√≥ria)
 //
 //////////////////////////////////////////////////////
 
@@ -1219,20 +1219,20 @@ ajx=lx/dminx;
 
 
 
-//	   estado limite ˙ltimo
+//	   estado limite √∫ltimo
 
 	ht=hv[vv]+hl[vl]+0.05; //   altura total do pavimento (m)
 
 	da=ht-0.05;
-    db=ht-0.10; // braÁos de alavanca (m)
+    db=ht-0.10; // bra√ßos de alavanca (m)
 
 
 
 
 
 
-//	ep=195000 // mÛdulo aÁo protens„o mpa
-//	es=210000 // mÛdulo aÁo mpa
+//	ep=195000 // m√≥dulo a√ßo protens√£o mpa
+//	es=210000 // m√≥dulo a√ßo mpa
 
 	apa=na[ana]*0.0001014;
     apb=nb[anb]*0.0001014;
@@ -1240,15 +1240,15 @@ ajx=lx/dminx;
 	as=npt[anpt]*bp[abp];
 
 //
-//	  rotina 2006 p c·lculo de x (linha-neutra)
-//		  c·lculo do momento resistente
+//	  rotina 2006 p c√°lculo de x (linha-neutra)
+//		  c√°lculo do momento resistente
 //
 	xv=(1486.9*(apa+apb)+434.8*(as))/(0.4857*fckpm[pm]*bv[vv]);
 
-	za=ht-0.05-0.4*xv;  // braÁo de alavanca camada a (m)
-	zb=za-0.05;		   // braÁo de alavanca camada b (m)
+	za=ht-0.05-0.4*xv;  // bra√ßo de alavanca camada a (m)
+	zb=za-0.05;		   // bra√ßo de alavanca camada b (m)
 
-	mresv=1486.9*(apa*za+apb*zb); // momento resistido pela seÁ„o (mn.m)
+	mresv=1486.9*(apa*za+apb*zb); // momento resistido pela se√ß√£o (mn.m)
 
 
 //////////////////////////////////////////////////////////////
@@ -1266,7 +1266,7 @@ ajx=lx/dminx;
 	ftv=fiv*2.5;
 
 //
-//		 RESTRI«√O (Resistente tem q ser superior ao de c·lculo)
+//		 RESTRI√á√ÉO (Resistente tem q ser superior ao de c√°lculo)
 //
 //		 Estado em Vazio -
 //
@@ -1332,7 +1332,7 @@ ajx=lx/dminx;
 
 //       descompressao
 
-	if (descompv<=0.05)    // adotado 0.05 como margem e referÍncia
+	if (descompv<=0.05)    // adotado 0.05 como margem e refer√™ncia
 	                     gv[8]=0;
 	                     else
 						 gv[8]=(descompv/0.05)-1;
@@ -1340,8 +1340,8 @@ ajx=lx/dminx;
 
 //	  FORMACAO DE FISSURA
 
-	if (ffissv<=(2*ltkv)) 			   // limite traÁ„o jem
-	                      gv[9]=0;			   // els - formaÁ„o fissura
+	if (ffissv<=(2*ltkv)) 			   // limite tra√ß√£o jem
+	                      gv[9]=0;			   // els - forma√ß√£o fissura
 	                      else
 						  gv[9]=(ffissv/(2*ltkv))-1;
 
@@ -1350,7 +1350,7 @@ ajx=lx/dminx;
 //
 
 	if (mresv>=(0.98*mvd))
-	                    gv[10]=0;					// restriÁ„o do momento
+	                    gv[10]=0;					// restri√ß√£o do momento
 	                    else
                         {
 						if (mresv<=0)
@@ -1386,18 +1386,18 @@ ajx=lx/dminx;
 
 
     if (ht<=hmax)
-	                gv[15]=0;			  // altura m·xima do pavimento
+	                gv[15]=0;			  // altura m√°xima do pavimento
 	                else
 					gv[15]=(ht/hmax)-1;
 
 
     if (bv[vv]<=bmax)
-	                    gv[16]=0;		  // largura m·xima viga
+	                    gv[16]=0;		  // largura m√°xima viga
 	                    else
-						gv[16]=((100*bv[vv])/bmax)-1;	//teste: diminuiÁ„o domÌnio
+						gv[16]=((100*bv[vv])/bmax)-1;	//teste: diminui√ß√£o dom√≠nio
 
 
-	if (llv>=(dminx*(dl)+dminy*(1-dl))) 		// dist‚ncia mÌnima entre pilares
+	if (llv>=(dminx*(dl)+dminy*(1-dl))) 		// dist√¢ncia m√≠nima entre pilares
 	                                      gv[17]=0;
 		                                  else
 						            gv[17]=((dminx*(dl)+dminy*(1-dl))/llv)-1;
@@ -1405,7 +1405,7 @@ ajx=lx/dminx;
 
 
 	if (na[ana]>=nb[anb]) 			  // evitar mais ferros na segunda camada(nb(anb))
-	              gv[18]=0;		  // em relaÁ„o ‡ primeira(na)
+	              gv[18]=0;		  // em rela√ß√£o √† primeira(na)
 				  else
 				  gv[18]=(float(nb[anb])/float(na[ana]))-1;
 
@@ -1418,13 +1418,13 @@ ajx=lx/dminx;
 
 
 //
-//	   somatÛrio penalidades vigas
+//	   somat√≥rio penalidades vigas
 //
 	penv=gv[0]+gv[1]+gv[2]+gv[3]+gv[4]+gv[5]+gv[6]+gv[7]+gv[8]+gv[9]+gv[10]+gv[11]+gv[12]+gv[13]+gv[14]+gv[15]+gv[16]+gv[17]+gv[18]+gv[19];
 
 //	   penalidade total
 
-	pentotal=1+15*(penl+penv);    // intensidade penalizaÁ„o k=10
+	pentotal=1+15*(penl+penv);    // intensidade penaliza√ß√£o k=10
 
 //
 //		  rotina para contar elementos
@@ -1458,9 +1458,9 @@ ajx=lx/dminx;
 
 //////////////////////////////////////////////////////////////////////////////
 //
-//	   c·lculo funÁ„o aptid„o
+//	   c√°lculo fun√ß√£o aptid√£o
 //
-//	   coment·rio: o v„o da laje È subtraÌdo da largura da viga
+//	   coment√°rio: o v√£o da laje √© subtra√≠do da largura da viga
 //				   e o da viga do lado do pilar
 //
 ///////////////////////////////////////////////////////////////////////////////
@@ -1473,7 +1473,7 @@ ajx=lx/dminx;
 	vpmp=sp*3.5*1.15;           				 // volume pilar - 01 lance
 											 // 1.15 para considerar o console
 
-//   c·lculo taxa ] pilar
+//   c√°lculo taxa ] pilar
 
 
 
@@ -1491,11 +1491,11 @@ if (pm>0) {
 				 ro=150;
 
 
-//   aÁo demais elementos
+//   a√ßo demais elementos
 
-	vapv=(na[ana]+nb[anb])*0.0001014*(llv-lp);    // volume aÁo protens„o viga
-	vapl=apl[vl]*(llj-bv[vv]);		         // volume aÁo protens„o laje
-	vadv=npt[anpt]*bp[abp]*(llv-lp);               // volume aÁo doce viga
+	vapv=(na[ana]+nb[anb])*0.0001014*(llv-lp);    // volume a√ßo protens√£o viga
+	vapl=apl[vl]*(llj-bv[vv]);		         // volume a√ßo protens√£o laje
+	vadv=npt[anpt]*bp[abp]*(llv-lp);               // volume a√ßo doce viga
 
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -1508,13 +1508,13 @@ custoconc=((vpmv*cpm[pm]*qdv)*1.5+(vpml*cpm[pm]*qdl)+(vpmp*cpm[pm]*qdp*1.5))*num
 
 custoconcml=vml*ccml[cml]*1.3*numpav;
 
-// 1.5 pq concreto viga e pilar È mais caro
+// 1.5 pq concreto viga e pilar √© mais caro
 
-// em 20/11/06 foi desconsiderado o custo fundaÁ„o
+// em 20/11/06 foi desconsiderado o custo funda√ß√£o
 
 	/////////////////////////////////
 	// custo pilar: REVERRRRRRRRRRRRRRRRRRR
-	// x 1.2 pconsiderar fundaÁ„o!!!!!!!!!!!!!!!!!!!!
+	// x 1.2 pconsiderar funda√ß√£o!!!!!!!!!!!!!!!!!!!!
 	////////////////////////////////
 
 ////////////////////////////////////////////////
@@ -1526,7 +1526,7 @@ custoconcml=vml*ccml[cml]*1.3*numpav;
 if (vl<28)
               dop=24;
 			  else
-			  dop=36;         // custos despesas operacionais unit·rios
+			  dop=36;         // custos despesas operacionais unit√°rios
 
 cdop=qdl*(llj-bv[vv])*1.2*dop*numpav;       // custos despesas operacionais total
 
@@ -1584,9 +1584,9 @@ ctmt=1500*ctmv*numpav+ctmp;
 
 /////////////////////////////////////////////////////////////////////////////////////
 //
-//	   CUSTOS DAS PERDAS DA PISTA E N⁄MERO DE PISTAS UTILIZADAS
+//	   CUSTOS DAS PERDAS DA PISTA E N√öMERO DE PISTAS UTILIZADAS
 //
-//	              OBS: ROTINA EM CONSTRU«√O	/ falta custo utilizaÁao
+//	              OBS: ROTINA EM CONSTRU√á√ÉO	/ falta custo utiliza√ßao
 //										  falta acrescentar na funcao custo
 //
 /////////////////////////////////////////////////////////////////////////////////////
@@ -1601,7 +1601,7 @@ ctmt=1500*ctmv*numpav+ctmp;
 //					   qdpl=qdpl-1
 //					   endif
 
-//ptal=((qdpl*lpl)-(qdl*lljc))*apl(vl)*7857 // perda do aÁo de protensao em kg
+//ptal=((qdpl*lpl)-(qdl*lljc))*apl(vl)*7857 // perda do a√ßo de protensao em kg
 
 //lpv=60						// comprimento pista viga
 
@@ -1613,7 +1613,7 @@ ctmt=1500*ctmv*numpav+ctmp;
 //                       qdpv=qdpv-1
 //					   endif
 
-//ptav=((qdpv*lpv)-(qdv*llv))*(na(ana)+nb(anb))*0.0001014*7810	// perda aÁo de prot em kg
+//ptav=((qdpv*lpv)-(qdv*llv))*(na(ana)+nb(anb))*0.0001014*7810	// perda a√ßo de prot em kg
 
 
 
@@ -1622,7 +1622,7 @@ ctmt=1500*ctmv*numpav+ctmp;
 
 //////////////////////////////////////////////////////////////////////
 //
-//	                        Custo AÁos: PROTENS√O E PASSIVO
+//	                        Custo A√ßos: PROTENS√ÉO E PASSIVO
 //
 //////////////////////////////////////////////////////////////////////
 
@@ -1635,11 +1635,11 @@ ctmt=1500*ctmv*numpav+ctmp;
 
 	custope=0.86912*(llv-lp)*qdv*numpav*cad;  // custo porta estribo 4 6mm
 
-	custolig=12.125*qdp*numpav*cad;        // custo arm ligaÁ„o 5 12.5mm (c=2,5 m)
+	custolig=12.125*qdp*numpav*cad;        // custo arm liga√ß√£o 5 12.5mm (c=2,5 m)
 
 	custoneo=qdp*2*numpav*22.5;   // r$ 22.5
 
-// 1.085 pq cordoalha em viga È mais cara
+// 1.085 pq cordoalha em viga √© mais cara
 
 
 ///////////////////////////////////////////////////////////////////
@@ -1709,11 +1709,11 @@ ctmt=1500*ctmv*numpav+ctmp;
     }
 return f;
 
-//       Com: Valor que ser· jogado no vetor APT(k) do Main Program AG.f90
+//       Com: Valor que ser√° jogado no vetor APT(k) do Main Program AG.f90
 
 
 
-// ApresentaÁ„o dos valores encontrados para cada indivÌduo
+// Apresenta√ß√£o dos valores encontrados para cada indiv√≠duo
 //		WRITE (*, '(1X,A,I3,A)') "--- Individuo ", K, " ---"
 //		WRITE (*, '(/)', ADVANCE = "NO")
 //
@@ -1736,9 +1736,9 @@ return f;
 float AvaliaIndividuoTT (float dminx, float dminy, float lx, float ly, float hmax,float bmax, float q, float gpr, float gpl, float cap, float cad, int ptamanho, int nxmax, int nymax, int nvv, int numgen, int k, int numpav,individuo pop[] )
 {
 
-// F                = FunÁ„o aptid„o
-// Custo total      = FunÁ„o objetivo (sem as restriÁıes)
-// k                = indica os indivÌduos a serem avaliados
+// F                = Fun√ß√£o aptid√£o
+// Custo total      = Fun√ß√£o objetivo (sem as restri√ß√µes)
+// k                = indica os indiv√≠duos a serem avaliados
 
 //Contadores inteiros
 
@@ -1749,8 +1749,8 @@ float AvaliaIndividuoTT (float dminx, float dminy, float lx, float ly, float hma
 /*------------------------------------------------------------------------------
 
 
-    O k È o indivÌduo que est· sendo analisado no momento
-    numgen È o n˙mero de bits do genÛtipo (cromossomo)			*/
+    O k √© o indiv√≠duo que est√° sendo analisado no momento
+    numgen √© o n√∫mero de bits do gen√≥tipo (cromossomo)			*/
 
             for (j=0; j<numgen; j++)
             {
@@ -1777,7 +1777,7 @@ float AvaliaIndividuoTT (float dminx, float dminy, float lx, float ly, float hma
 
 //------------------------------------------------------------------------------
 
-//                      CUSTO CONCRETO PR…-MOLDADO  (cpm)
+//                      CUSTO CONCRETO PR√â-MOLDADO  (cpm)
 
    cpm[0]=185;
    cpm[1]=200;
@@ -1786,43 +1786,43 @@ float AvaliaIndividuoTT (float dminx, float dminy, float lx, float ly, float hma
 
 /*-------------------------------------------------------------------------------
 
-                          DefiniÁ„o Vari·veis lOCAIS
-	                        Vari·veis de Projeto (VP)
-	                Vari·veis da configuraÁ„o estrutural
+                          Defini√ß√£o Vari√°veis lOCAIS
+	                        Vari√°veis de Projeto (VP)
+	                Vari√°veis da configura√ß√£o estrutural
 */
 
 
-	int nx,ny;                // N˙mero de v„os na direÁ„o X e Y	- VP
-	int dl;                   // DireÁ„o da laje: 1 (direÁ„o Y) e 0 (direÁ„o X) - VP
+	int nx,ny;                // N√∫mero de v√£os na dire√ß√£o X e Y	- VP
+	int dl;                   // Dire√ß√£o da laje: 1 (dire√ß√£o Y) e 0 (dire√ß√£o X) - VP
 	float ajx,ajy;
 
 //------------------------------------------------------------------------------
 
 
-//	                         Vari·veis Auxiliares
+//	                         Vari√°veis Auxiliares
 
 
-	float llj,llv,rpilar;     // V„o da laje e v„o da viga E REACAO NO PILAR
-	float lp,sp;  		      // LP= Lado pilar SP=SE«√O DO PILAR
-	float ro;			      // TAXA A«O PILAR
-	float lljc;               // V„o da laje corrigido (descontado BV)
+	float llj,llv,rpilar;     // V√£o da laje e v√£o da viga E REACAO NO PILAR
+	float lp,sp;  		      // LP= Lado pilar SP=SE√á√ÉO DO PILAR
+	float ro;			      // TAXA A√áO PILAR
+	float lljc;               // V√£o da laje corrigido (descontado BV)
 
 
 //------------------------------------------------------------------------------
 
 
-//	                       Vari·veis do material
+//	                       Vari√°veis do material
 
 
 
 	int fckml[4];             // Fck moldado in loco
-    int fckpm[4];             // Fck prÈ-moldado
+    int fckpm[4];             // Fck pr√©-moldado
 	int	pm,cml;               // Contadores dos fcks - VP
 
 
 //------------------------------------------------------------------------------
 
-//	                      Vari·veis Quantidade PeÁas
+//	                      Vari√°veis Quantidade Pe√ßas
 
 
 	int  qdp, qdl, qdv;            // Quantidade de pilar, laje e viga respectivamente
@@ -1830,7 +1830,7 @@ float AvaliaIndividuoTT (float dminx, float dminy, float lx, float ly, float hma
 
 //------------------------------------------------------------------------------
 
-//                           Vari·veis dos custos
+//                           Vari√°veis dos custos
 
 
 	float dop, cdop;                          // DESPESAS OPERACIONAIS LAJES
@@ -1840,8 +1840,8 @@ float AvaliaIndividuoTT (float dminx, float dminy, float lx, float ly, float hma
 
 //------------------------------------------------------------------------------
 
-//	                         Vari·veis da Laje
-//	                      Vari·veis de Projeto: VL
+//	                         Vari√°veis da Laje
+//	                      Vari√°veis de Projeto: VL
 
 	int vl;                  // Caracteriza a laje
 	float ll[8];             // Largura da laje (m)
@@ -1851,68 +1851,68 @@ float AvaliaIndividuoTT (float dminx, float dminy, float lx, float ly, float hma
     float hdl[8];            // altura do dente(m)
     float ldma[8];           // largura do dente maior(m)
     float ldme[8];           // largura dente menor(m)
-    float pa[8];             // ForÁa Protens„o antes transferÍncia (MN)
-	float apl[8];			 // apl ¡rea de Protens„o na Laje (m2)
+    float pa[8];             // For√ßa Protens√£o antes transfer√™ncia (MN)
+	float apl[8];			 // apl √Årea de Protens√£o na Laje (m2)
 
 //------------------------------------------------------------------------------
 
 
-//	                           Vari·veis Auxiliares
+//	                           Vari√°veis Auxiliares
 
 
-	float m,ac,ygc;                                 // relaÁ„o fcks, ·rea capa corrigida, cg sÁ composta
-	float ic;                                       // Momento inÈrcia sÁ composta
-	float yg[8],a[8],ii[8],xmax[8];                 // dados seÁ„o isolada
-	float ys[8];                                    // dist‚ncia do cg das cordoalhas (de baixo pra cima)
-	float nc[8], dc[8];                             // n˙mero e di‚metro dos cabos
-	float ep,epc,winf,wsup,wcinf,wcsup;             // excentricidades e mÛdulos LAJES
-	float carga[6],ml[6],rl[6];                     // Auxiliares c·lculo esforÁos
-	float mld,vld;                                  // Momento e cortante de c·lculo (faixa de 1.2m)
-	float tinf,tsup,tcinf,tcsup;                    // Tensıes na LAJE
-	float scp,spt,pt,pinf;                          // Auxiliares na protens„o
-	float tinpt,tsupt,tinpi,tsupi;	                // Tensıes protens„o
-	float tdesi,tdess,tti,tts,ttii,ttss,tmi,tms;    // Tensıes atuantes transitÛrias
-	float des,ff,lcj,ltj,lck,ltk;                   // tensıes limites
+	float m,ac,ygc;                                 // rela√ß√£o fcks, √°rea capa corrigida, cg s√ß composta
+	float ic;                                       // Momento in√©rcia s√ß composta
+	float yg[8],a[8],ii[8],xmax[8];                 // dados se√ß√£o isolada
+	float ys[8];                                    // dist√¢ncia do cg das cordoalhas (de baixo pra cima)
+	float nc[8], dc[8];                             // n√∫mero e di√¢metro dos cabos
+	float ep,epc,winf,wsup,wcinf,wcsup;             // excentricidades e m√≥dulos LAJES
+	float carga[6],ml[6],rl[6];                     // Auxiliares c√°lculo esfor√ßos
+	float mld,vld;                                  // Momento e cortante de c√°lculo (faixa de 1.2m)
+	float tinf,tsup,tcinf,tcsup;                    // Tens√µes na LAJE
+	float scp,spt,pt,pinf;                          // Auxiliares na protens√£o
+	float tinpt,tsupt,tinpi,tsupi;	                // Tens√µes protens√£o
+	float tdesi,tdess,tti,tts,ttii,ttss,tmi,tms;    // Tens√µes atuantes transit√≥rias
+	float des,ff,lcj,ltj,lck,ltk;                   // tens√µes limites
 	float xtl,xl,zl,zla,zlb,mresl;                  // auxiliares elu
-	float bxl, ddl, penl;                           // beta x da laje, altura ˙til laje e penalidade laje
+	float bxl, ddl, penl;                           // beta x da laje, altura √∫til laje e penalidade laje
 	float cfi, cft, fi, ft, eil;                    // Contra-flecha e flecha das lajes
 
 
 //------------------------------------------------------------------------------
 
-//	                        VARI¡VEIS DA VIGA
-//	                     VARI¡VEIS DE PROJETO: vv
+//	                        VARI√ÅVEIS DA VIGA
+//	                     VARI√ÅVEIS DE PROJETO: vv
 
 	int vv;
 	float hv[32],bv[32];          // geometria da viga
 	float ht;                     // altura total do pavimento
-	int nmax[32];  	              // qde m·x. de cordoalha por camada
+	int nmax[32];  	              // qde m√°x. de cordoalha por camada
 	int ana,anb,nbaux;            // qde de cordoalhas por camada
 	int na[16];
     int nb[16];
-	int npt[4];                   // qde de barras passivas de traÁ„o
+	int npt[4];                   // qde de barras passivas de tra√ß√£o
  	float bp[4];                  // bitolas passivas
 
 //------------------------------------------------------------------------------
 
-//	               VARI¡VEIS AUXILIARES (GEOMETRIA E TENS’ES)
+//	               VARI√ÅVEIS AUXILIARES (GEOMETRIA E TENS√ïES)
 
 
-	float av,ppv,me,ygv,iv;                    // ·rea, peso prÛprio, mom. est·tico,cg, m. inÈrcia
-	float avc,ppvc,mec,ygcv,ivc;               // dados sÁ composta
-	float epa,epb,epcv;                        // excentricidade sÁ isolada
-	float epca,epcb,epccv;                     // excentricidade sÁ composta
-	float da,db,apa,apb,as;                    // altura ˙til e ·rea de armaduras
-	float wvi,wvs,wcvi,wcvs;                   // mÛdulos resistentes
+	float av,ppv,me,ygv,iv;                    // √°rea, peso pr√≥prio, mom. est√°tico,cg, m. in√©rcia
+	float avc,ppvc,mec,ygcv,ivc;               // dados s√ß composta
+	float epa,epb,epcv;                        // excentricidade s√ß isolada
+	float epca,epcb,epccv;                     // excentricidade s√ß composta
+	float da,db,apa,apb,as;                    // altura √∫til e √°rea de armaduras
+	float wvi,wvs,wcvi,wcvs;                   // m√≥dulos resistentes
 	float mvt,mvpp,mvg,mvq,mvd;                // momentos
-	float tvi,tvs,tvppi,tvpps,tvgi,tvq;        // tensıes
+	float tvi,tvs,tvppi,tvpps,tvgi,tvq;        // tens√µes
 	float bxv,penv;                            // beta x viga e penalidade viga
 	int anpt,abp;						       // auxiliares contador
 
 //------------------------------------------------------------------------------
 
 
-//				          VARI¡VEIS AUXILIARES (PROTENS√O)
+//				          VARI√ÅVEIS AUXILIARES (PROTENS√ÉO)
 
 	float pav,soma,soma2,sptv,pat,soma3,pats,protsup;
 	float vtinpt,vtsupt,vpinf,vtinpi,vtsupi;
@@ -1922,7 +1922,7 @@ float AvaliaIndividuoTT (float dminx, float dminy, float lx, float ly, float hma
 //------------------------------------------------------------------------------
 
 
-//		               	VARI¡VEIS AUXILIARS (ELU) / (ELS)
+//		               	VARI√ÅVEIS AUXILIARS (ELU) / (ELS)
 
 	float xv,za,zb,mresv;
 	float cfiv,cftv, fiv, ftv;
@@ -1930,21 +1930,21 @@ float AvaliaIndividuoTT (float dminx, float dminy, float lx, float ly, float hma
 
 //------------------------------------------------------------------------------
 
-//                                                                              >>VER AS RESTRI«’ES
+//                                                                              >>VER AS RESTRI√á√ïES
 
-//			             VARI¡VEIS DAS RESTRI«’ES
+//			             VARI√ÅVEIS DAS RESTRI√á√ïES
 
-	float gl[17];  //restriÁıes lajes
-	float gv[20];  //restriÁıes vigas
+	float gl[17];  //restri√ß√µes lajes
+	float gv[20];  //restri√ß√µes vigas
 
 //------------------------------------------------------------------------------
 
-//		     	        VARI¡VEIS APTID√O / CUSTOS
+//		     	        VARI√ÅVEIS APTID√ÉO / CUSTOS
 
 	float  vpmv,vpml,vpmp,vml,vapv,vapl,vadv;                            // volume dos materiais
 	float  custoconc, custoconcml,custoprot,custoad,custotal, custofab;  // custos material
 	float  custocis,custope,custolig;
-	float  pentotal;                                                     // somatÛrio penalidades
+	float  pentotal;                                                     // somat√≥rio penalidades
 	float  lpl,nlp,qdpl,ptal,lpv,nvp,qdpv,ptav;
 
 
@@ -1952,8 +1952,8 @@ float AvaliaIndividuoTT (float dminx, float dminy, float lx, float ly, float hma
 
                             BANCO DE DADOS
 
-    		     Listas das Vari·veis dos Materiais
-                   ResitÍncias Materiais (fcks)                                */
+    		     Listas das Vari√°veis dos Materiais
+                   Resit√™ncias Materiais (fcks)                                */
 
 
 
@@ -1971,13 +1971,13 @@ float AvaliaIndividuoTT (float dminx, float dminy, float lx, float ly, float hma
 
 		           	        LISTAS LAJES
 
-            	  VinculaÁ„o da vari·vel VL das Lajes
-	              Propriedades geomÈtricas das Lajes
+            	  Vincula√ß√£o da vari√°vel VL das Lajes
+	              Propriedades geom√©tricas das Lajes
 
-             DefiniÁ„o propriedades da laje seÁ„o PM - ACI
+             Defini√ß√£o propriedades da laje se√ß√£o PM - ACI
 				           Banco Dados - Laje                                 */
 
-// 8 opÁıes de lajes
+// 8 op√ß√µes de lajes
                           // Geometria 0,61 X 2,44
 
 
@@ -1990,12 +1990,12 @@ float AvaliaIndividuoTT (float dminx, float dminy, float lx, float ly, float hma
 	       hdl[0]=0.56;             // altura do dente(m);
            ldma[0]=0.15;            // largura do dente maior(m);
            ldme[0]=0.1;             // largura do dente menor(m)
-           a[0]=0.26;	            // ·rea da laje (m2)
+           a[0]=0.26;	            // √°rea da laje (m2)
            yg[0]=0.44;		        // cg da laje (m)
-	       ii[0]=0.008734616;       // momento de inÈrcia da laje (m4)
-           //xmax[i]=0.065;         // m·ximo x (ln)
-           nc[0]=6;                 // n˙mero de cabos                           << usar para achar forÁa de protens„o?? como ?
-           dc[0]=0.0127;            // di‚metro do cabo(m)
+	       ii[0]=0.008734616;       // momento de in√©rcia da laje (m4)
+           //xmax[i]=0.065;         // m√°ximo x (ln)
+           nc[0]=6;                 // n√∫mero de cabos                           << usar para achar for√ßa de protens√£o?? como ?
+           dc[0]=0.0127;            // di√¢metro do cabo(m)
            ys[0]=0.18;
 
 
@@ -2107,10 +2107,10 @@ float AvaliaIndividuoTT (float dminx, float dminy, float lx, float ly, float hma
 
 /*-----------------------------------------------------------------------------------
 
-	                	     ForÁa de protens„o (MN) - lajes
-	                        pa=n.di‚metroacor.1453.0,97.(10-6)
+	                	     For√ßa de protens√£o (MN) - lajes
+	                        pa=n.di√¢metroacor.1453.0,97.(10-6)
 
-		                         sinal (-) / compress„o
+		                         sinal (-) / compress√£o
 */
 
 
@@ -2124,7 +2124,7 @@ pa[6]=-2.856634352;
 pa[7]=-3.213713647;
 
 
-//	           ¡rea de protens„o total no painel da laje  n˙merode coodoalhas*·rea
+//	           √Årea de protens√£o total no painel da laje  n√∫merode coodoalhas*√°rea
 
 
 apl[0]=0.000760061;
@@ -2139,17 +2139,17 @@ apl[7]=0.002280184;
 
 //---------------------------------------------------------------------------------
 
-//      	 listas das vari·veis vigas
+//      	 listas das vari√°veis vigas
 
 
-//      	 qde de barras passivas de traÁ„o
+//      	 qde de barras passivas de tra√ß√£o
 
       npt[0]=0;
       npt[1]=2;
       npt[2]=4;
       npt[3]=6;
 
-//	    ·rea das bitolas passivas disponÌveis
+//	    √°rea das bitolas passivas dispon√≠veis
 
      	bp[0]=0.000028;   // 6.0mm
     	bp[1]=0.000050;	 // 8.0mm
@@ -2195,7 +2195,7 @@ apl[7]=0.002280184;
       nb[15]=23;
 
 //
-//		caracterÌsticas geomÈtricas da viga
+//		caracter√≠sticas geom√©tricas da viga
 //
 
       for(i=0; i<5; i++){
@@ -2213,7 +2213,7 @@ apl[7]=0.002280184;
     	bv[i+20]=0.80;
 		bv[i+25]=0.90;
 
-    	nmax[i]=13;	 // qde m·xima de cordoalhas por base de viga
+    	nmax[i]=13;	 // qde m√°xima de cordoalhas por base de viga
     	nmax[i+5]=15;
     	nmax[i+10]=17;
     	nmax[i+15]=19;
@@ -2221,7 +2221,7 @@ apl[7]=0.002280184;
 		nmax[i+25]=23;
 	  }
 
-//   complemento das listas das vigas (32 possÌveis)
+//   complemento das listas das vigas (32 poss√≠veis)
 
 		hv[30]=hv[28];
         bv[30]=bv[28];
@@ -2234,15 +2234,15 @@ apl[7]=0.002280184;
 
 
 //
-//             	               ROTINA PARA DECODIFICA«√O
+//             	               ROTINA PARA DECODIFICA√á√ÉO
 //
-//	           Com: As vari·veis que comeÁam com "A" s„o auxiliares
+//	           Com: As vari√°veis que come√ßam com "A" s√£o auxiliares
 //
-//	        Com: Este "K" vem do Loop no programa principal (k=1 atÈ numind)
+//	        Com: Este "K" vem do Loop no programa principal (k=1 at√© numind)
 //
 
 
-	dl=apop[k][0];                                     // j· È o prÛprio valor
+	dl=apop[k][0];                                     // j√° √© o pr√≥prio valor
 
 	pm=2*apop[k][1]+1*apop[k][2];   // auxiliar
 
@@ -2252,7 +2252,7 @@ apl[7]=0.002280184;
 
 	//cout<<fckml[cml]<<endl;
 
-	vl=4*apop[k][7]+2*apop[k][8]+1*apop[k][9];	 // auxiliar varia de 0 ‡ 7 ([k][5] e [k][6] est„o temporariamente in˙teis para essa aplicaÁ„o)
+	vl=4*apop[k][7]+2*apop[k][8]+1*apop[k][9];	 // auxiliar varia de 0 √† 7 ([k][5] e [k][6] est√£o temporariamente in√∫teis para essa aplica√ß√£o)
 
 
 	anpt=2*apop[k][10]+1*apop[k][11] ;        // auxiliar lista npt
@@ -2278,7 +2278,7 @@ apl[7]=0.002280184;
 
 	for(i=0; i<nymax; i++)
     {
-             // a funÁ„o int arredonda pra baixo mas h· o nx+1;
+             // a fun√ß√£o int arredonda pra baixo mas h√° o nx+1;
 
 	ny=int(ny+apop[k][21+nxmax+i+1]*pow(2,(nymax-i-1)));
 
@@ -2302,11 +2302,11 @@ apl[7]=0.002280184;
 /*
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !
-!                     REDU«√O DO DOMÕNIO DA BASE
+!                     REDU√á√ÉO DO DOM√çNIO DA BASE
 !
-!                   T…CNICA: ALTERAR O VALOR DE VV
+!                   T√âCNICA: ALTERAR O VALOR DE VV
 !
-!	EXISTE UM ESPA«O INFACTÕVEL MAS FAZ-SE TRANSFORMACAO NA LISTA
+!	EXISTE UM ESPA√áO INFACT√çVEL MAS FAZ-SE TRANSFORMACAO NA LISTA
 !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 */
@@ -2381,9 +2381,9 @@ apl[7]=0.002280184;
 /*
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !																		   !
-!							TRANSG NICO (NA x NB)
+!							TRANSG√äNICO (NA x NB)
 !
-!	           Troca por um fenÛtipo que melhor se adapte ao problema
+!	           Troca por um fen√≥tipo que melhor se adapte ao problema
 !																		   !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -2396,7 +2396,7 @@ apl[7]=0.002280184;
 
                         !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                         !							   !
-                        !   Ajuste dos V„os MÌnimos
+                        !   Ajuste dos V√£os M√≠nimos
                         !
                         !   Penaliza exageradamente
                         !
@@ -2417,14 +2417,14 @@ ajx=lx/dminx;
                   }
 
 
-//       c·lculo dos v„os
+//       c√°lculo dos v√£os
 
 	llj=(lx/nx)*(1-dl)+(ly/ny)*(dl);		 // (m)
 	llv=(lx/nx)*(dl)+(ly/ny)*(1-dl);		 // (m)
 
 
 
-	lljc=llj-bv[vv];      // v„o laje corrigido (m)
+	lljc=llj-bv[vv];      // v√£o laje corrigido (m)
 
 
 
@@ -2437,32 +2437,32 @@ ajx=lx/dminx;
 /*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 |                        LAJES TT                           |
 |                                                           |
-|		            Rotina de C·lculo                       |
+|		            Rotina de C√°lculo                       |
 |                                                           |
-|	  Coment·rio: A traÁ„o tem sinal + e a compress„o -     |
+|	  Coment√°rio: A tra√ß√£o tem sinal + e a compress√£o -     |
 |                                                           |
 |                                                           |
-|          DefiniÁ„o propriedades seÁ„o composta da Laje    |
+|          Defini√ß√£o propriedades se√ß√£o composta da Laje    |
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
 
-//    C·lculo do ygc, ac e ic m
+//    C√°lculo do ygc, ac e ic m
 
-    m=pow((float(fckml[cml])/float(fckpm[pm])),0.5);                         // relaÁ„o fck
+    m=pow((float(fckml[cml])/float(fckpm[pm])),0.5);                         // rela√ß√£o fck
 
-    ac=0.05*ll[vl];                                                          //·rea seÁ„o composta     (m2)
+    ac=0.05*ll[vl];                                                          //√°rea se√ß√£o composta     (m2)
 
     ygc=((yg[vl]*a[vl])+(ac*(hl[vl]+0.025)))/(a[vl]+ac);                     //cg com capeamento       (m)
 
 float auxiliar_altura, auxiliar_inercia;
 
-    ic=ii[vl] + (ll[vl]*pow(0.05,3))/12 + ac*pow((hl[vl]+0.025-ygc),2);          // inÈrcia seÁ„o composta (m4)
+    ic=ii[vl] + (ll[vl]*pow(0.05,3))/12 + ac*pow((hl[vl]+0.025-ygc),2);          // in√©rcia se√ß√£o composta (m4)
 
 
 //---------------------------------------------------------------------------------------------------------
-//		 excentricidades e mÛdulos resistentes das lajes
+//		 excentricidades e m√≥dulos resistentes das lajes
 
-	ep=yg[vl]-ys[vl];	                                        // (m) seÁ„o isolada, adotado cl=1,2cm
-	epc=ygc-ys[vl];	                                        // (m) seÁ„o composta
+	ep=yg[vl]-ys[vl];	                                        // (m) se√ß√£o isolada, adotado cl=1,2cm
+	epc=ygc-ys[vl];	                                        // (m) se√ß√£o composta
 
 //----------------------------------------------------------------------------------------------------------
 
@@ -2481,12 +2481,12 @@ if (k==0){
     }
 //--------------------------------------------------------------------------------------------------------
 
-//                C·lculo dos momentos e tensıes nas Lajes
-//	                     Com: C·lculo por painel
+//                C√°lculo dos momentos e tens√µes nas Lajes
+//	                     Com: C√°lculo por painel
 
 
-	carga[0]=a[vl]*2.5;	          // peso prÛprio laje (tf/m)
-	carga[1]=0.125*ll[vl];        // peso capa (tf/m),          onde 0,125 È massa especÌfica do concreto x espessura da capa = 2,5*0,05
+	carga[0]=a[vl]*2.5;	          // peso pr√≥prio laje (tf/m)
+	carga[1]=0.125*ll[vl];        // peso capa (tf/m),          onde 0,125 √© massa espec√≠fica do concreto x espessura da capa = 2,5*0,05
 	carga[2]=gpr*ll[vl];	      // pav+rev	  (tf/m)
 	carga[3]=gpl*ll[vl];	      // paredes sobre laje (tf/m)
 	carga[4]=q*ll[vl];		      // carga acidental	(tf/m)
@@ -2497,41 +2497,41 @@ if (k==0){
 	{
 
 	ml[i]=carga[i]*pow(lljc,2)/8;	 // momento em tf.m/(b
-	rl[i]=carga[i]*(llj)/2  ;     // reaÁ„o/cortante (tf) por painel
+	rl[i]=carga[i]*(llj)/2  ;     // rea√ß√£o/cortante (tf) por painel
 	}
 
 //--------------------------------------------------------------------------------------------------------
 
-//	   AÁıes de C·lculo por painel (MN.m e MN)
+//	   A√ß√µes de C√°lculo por painel (MN.m e MN)
 
-	mld=(1.3*ml[0]+1.4*(ml[1]+ml[2]+ml[3]+ml[4]))/100; // mom. de c·lculo  laje
-	vld=(1.3*rl[0]+1.4*(rl[1]+rl[2]+rl[3]+rl[4]))/100; // cortante de c·lc. laje
+	mld=(1.3*ml[0]+1.4*(ml[1]+ml[2]+ml[3]+ml[4]))/100; // mom. de c√°lculo  laje
+	vld=(1.3*rl[0]+1.4*(rl[1]+rl[2]+rl[3]+rl[4]))/100; // cortante de c√°lc. laje
 
 
-//         Tensıes Fase de concretagem (peÁa isolada)
+//         Tens√µes Fase de concretagem (pe√ßa isolada)
 //
 //		   Tf/100=MN
 
 	tinf=((ml[0]+ml[1]+ml[5])/winf)/100;   // (mpa)
 	tsup=((ml[0]+ml[1]+ml[5])/wsup)/100;	  // (mpa)
 
-//		Tensıes apÛs concretagem (seÁ„o composta)
+//		Tens√µes ap√≥s concretagem (se√ß√£o composta)
 
 	tcinf=((ml[2]+ml[3]+ml[4])/wcinf)/100;	// (mpa)
 	tcsup=((ml[2]+ml[3]+ml[4])/wcsup)/100;	// (mpa)
 
 //--------------------------------------------------------------------------------------------------------
 
-//	                     ForÁa de Protens„o
+//	                     For√ßa de Protens√£o
 
-//	      protens„o inicial - ato da transferÍncia (pa)
+//	      protens√£o inicial - ato da transfer√™ncia (pa)
 //
-//	  pa=nc*acor*1453*0.97   // forÁa de protens„o inicial (mn)
+//	  pa=nc*acor*1453*0.97   // for√ßa de protens√£o inicial (mn)
 //
 //	  nc*acor=pa/0.001409
 
 
-//	  protens„o apÛs transferÍncia (pt)
+//	  protens√£o ap√≥s transfer√™ncia (pt)
 
 	scp=(pa[vl]/a[vl])+pa[vl]*(pow(ep,2)/ii[vl]); // mpa (sinal -)
 
@@ -2539,24 +2539,24 @@ if (k==0){
 
 	pt=pa[vl]-apl[vl]*spt;	// mn
 
-//	  restriÁ„o - tÈrmino da protens„o
+//	  restri√ß√£o - t√©rmino da protens√£o
 
-//	  protens„o tempo infinito (pinf)
+//	  protens√£o tempo infinito (pinf)
 
-	pinf=0.75*pa[vl];		 // perda estimada (75% da forÁa inicial)
+	pinf=0.75*pa[vl];		 // perda estimada (75% da for√ßa inicial)
 
-//	  tensıes devido ‡ protens„o
+//	  tens√µes devido √† protens√£o
 
-	tinpt=(pt/a[vl])+pt*(ep/winf);	  // tensıes na seÁ„o pm apÛs
-	tsupt=(pt/a[vl])+pt*(ep/wsup);	  // transferÍncia da protens„o
+	tinpt=(pt/a[vl])+pt*(ep/winf);	  // tens√µes na se√ß√£o pm ap√≥s
+	tsupt=(pt/a[vl])+pt*(ep/wsup);	  // transfer√™ncia da protens√£o
 
-	tinpi=(pinf/a[vl])+pinf*(ep/winf);  // tensıe na seÁ„o pm num tempo infinito
+	tinpi=(pinf/a[vl])+pinf*(ep/winf);  // tens√µe na se√ß√£o pm num tempo infinito
 	tsupi=(pinf/a[vl])+pinf*(ep/wsup);
 
 //--------------------------------------------------------------------------------------------------------
 
-//        restriÁıes - verificaÁıes em vazio
-//         tensıes atuantes em vazio (mpa)
+//        restri√ß√µes - verifica√ß√µes em vazio
+//         tens√µes atuantes em vazio (mpa)
 
   	tdesi=tinpt+(ml[0]/winf)/100;     // desmoldagem inferior
 	tdess=tsupt+(ml[0]/wsup)/100;     // desmoldagem superior
@@ -2567,36 +2567,36 @@ if (k==0){
 	tmi=tinpt+tinf;                   // montagem inferior
 	tms=tsupt+tsup; 		             // montagem superior
 
-//	  tensıes els  (mpa)
-//	  descompress„o
+//	  tens√µes els  (mpa)
+//	  descompress√£o
 
 	des=((ml[0]+ml[1])/winf)/100+tinpi+((ml[2]+ml[3])/wcinf)/100+0.3*(ml[4]/wcinf)/100;
 
-//	 formaÁ„o de fissura (mpa)
+//	 forma√ß√£o de fissura (mpa)
 
 	ff=((ml[0]+ml[1])/winf)/100+tinpi+((ml[2]+ml[3])/wcinf)/100+0.4*(ml[4]/wcinf)/100;
 
 //******************************************************************************************
 
 //mudar ?
-//		tensıes limites
+//		tens√µes limites
 
-	lcj=0.49*fckpm[pm];                 // limite compress„o fckj (transitÛria)
-	ltj=1.2*0.7*0.3*pow((0.7*fckpm[pm]),(2/3)); // limite traÁ„o fckj
+	lcj=0.49*fckpm[pm];                 // limite compress√£o fckj (transit√≥ria)
+	ltj=1.2*0.7*0.3*pow((0.7*fckpm[pm]),(2/3)); // limite tra√ß√£o fckj
 
-	lck=0.7*fckpm[pm];                // limite compress„o fck   (els)
-	ltk=1.2*0.7*0.3*pow((fckpm[pm]),(2/3)); // limite traÁ„o fck / seÁ„o "t" (els)
+	lck=0.7*fckpm[pm];                // limite compress√£o fck   (els)
+	ltk=1.2*0.7*0.3*pow((fckpm[pm]),(2/3)); // limite tra√ß√£o fck / se√ß√£o "t" (els)
 
 
 //*******************************************************************************************
 //
-//		 solicitaÁıes normais - elu	(lajes alveolares)
+//		 solicita√ß√µes normais - elu	(lajes alveolares)
 //
-//	 obs: ser· testada a roti na que n„o necessita do c·lculo do prÈ
+//	 obs: ser√° testada a roti na que n√£o necessita do c√°lculo do pr√©
 //		  alongamento
 //
 
-	ddl=(hl[vl]+0.03875);  // altura ˙til da laje simplificada
+	ddl=(hl[vl]+0.03875);  // altura √∫til da laje simplificada
 
 	xtl=(3061.38/ll[vl])*apl[vl]/fckml[cml]; // para o painel b=1.2m
 // 3061.38 = ((1710*1.4)/(0.68*1.15))
@@ -2625,7 +2625,7 @@ if (k==0){
 //																		  //
 /////////////////////////////////////////////////////////////////////////////
 
-//                     CONTRA-FLECHA (PROTENS√O)
+//                     CONTRA-FLECHA (PROTENS√ÉO)
 
 	cfi=(pa[vl]*ep*lljc)/(8*4760*pow(fckpm[pm],0.5)*ii[vl]); // contra-flecha inicial
 
@@ -2636,7 +2636,7 @@ if (k==0){
 
 	fi=3*(carga[0]+carga[1]+carga[2]+carga[3]+0.3*carga[4])*pow(lljc,4)/100;
 
-	eil=(384*4760*pow(fckpm[pm],0.5)*ic);   // flecha inicial (sÁ composta)
+	eil=(384*4760*pow(fckpm[pm],0.5)*ic);   // flecha inicial (s√ß composta)
 
 
 
@@ -2645,12 +2645,12 @@ if (k==0){
 
 //--------------------------------------------------------------------------------------------------------
 //
-//		                  RESTRI«’ES
+//		                  RESTRI√á√ïES
 //
-//	    RestriÁıes estado vazio - Inferior (comprimida)
-// 		 Em mÛdulo p compensar o sinal (-) compress„o
+//	    Restri√ß√µes estado vazio - Inferior (comprimida)
+// 		 Em m√≥dulo p compensar o sinal (-) compress√£o
 //
-// Obs: Alguns valores referÍncias s„o multiplicados p aumentar a margem
+// Obs: Alguns valores refer√™ncias s√£o multiplicados p aumentar a margem
 //
 
 	if (fabs(tdesi)<=lcj)
@@ -2676,8 +2676,8 @@ if (k==0){
 	                     else
 						 gl[3]=fabs(tmi/lcj)-1;
 
-//	  restriÁıes em vazio - superior (tracionada)
-//		  n„o precisa ser em mÛdulo
+//	  restri√ß√µes em vazio - superior (tracionada)
+//		  n√£o precisa ser em m√≥dulo
 
 	if (tdess<=(2*ltj))
                     gl[4]=0;
@@ -2705,24 +2705,24 @@ if (k==0){
 					gl[7]=fabs(tms/(2*ltj))-1;
 
 
-//		  els - descompress„o e formaÁ„o de fissura
+//		  els - descompress√£o e forma√ß√£o de fissura
 
 	if (des<=0)
-	               gl[8]=0;			   // els - descompress„o
+	               gl[8]=0;			   // els - descompress√£o
                    else
 				   gl[8]=des;
 
 
-	if (ff<=(2*ltk))               // limite traÁ„o jem
-	               gl[9]=0;		   // els -formaÁ„o fissura
+	if (ff<=(2*ltk))               // limite tra√ß√£o jem
+	               gl[9]=0;		   // els -forma√ß√£o fissura
 	               else
 				   gl[9]=(ff/(2*ltk))-1;
 
 
-//	   restriÁ„o do x dentro da peÁa (acima dos alvÈolos)
+//	   restri√ß√£o do x dentro da pe√ßa (acima dos alv√©olos)
 
 	/*if (xl<=xmax[vl])
-	               gl[10]=0;		   // restriÁ„o x (dentro laje)
+	               gl[10]=0;		   // restri√ß√£o x (dentro laje)
                    else
                    gl[10]=(xl/xmax[vl])-1;*/
 
@@ -2730,12 +2730,12 @@ if (k==0){
 //		elu e beta x
 
 	if (mresl>=mld)
-                  gl[11]=0;	           	// restriÁ„o momento
+                  gl[11]=0;	           	// restri√ß√£o momento
 	              else
                   gl[11]=(mld/mresl)-1;
 
 
-	bxl=xl/ddl;						 // beta x laje: ser„o aceitos domÌnios 2 e 3
+	bxl=xl/ddl;						 // beta x laje: ser√£o aceitos dom√≠nios 2 e 3
 
 	if (bxl>0)
 	              gl[12]=0;
@@ -2754,9 +2754,9 @@ if (k==0){
 	               gl[14]=0;
 	               else
                    gl[14]=((dminx*(1-dl)+dminy*(dl))/llj)-1;
-// dist‚ncia mÌnima entre pilares
+// dist√¢ncia m√≠nima entre pilares
 
-//           verificaÁ„o flechas
+//           verifica√ß√£o flechas
 
 	  if ((ft+cft)<=(1.05*llj/250))      // margem para o deslocamento
 	                gl[15]=0;
@@ -2764,7 +2764,7 @@ if (k==0){
 					gl[15]=((ft+cft)/(1.05*llj/250))-1;
 
 //
-//	 restriÁ„o de relaÁ„o v„o/altura laje (bijan)
+//	 restri√ß√£o de rela√ß√£o v√£o/altura laje (bijan)
 //
 	if ((llj/(hl[vl]+0.05))<=45)
                     gl[16]=0;
@@ -2772,7 +2772,7 @@ if (k==0){
                     gl[16]=((llj/(hl[vl]+0.05))/45)-1;
 
 //
-//	   somatÛrio penalidades lajes
+//	   somat√≥rio penalidades lajes
 //
 
 
@@ -2786,38 +2786,38 @@ if (k==0){
 //
 //			  VIGA "T" INVERTIDA
 //
-//	           Rotina de C·lculo
+//	           Rotina de C√°lculo
 //
 //
-//	 Propriedades geomÈtricas Viga isolada
+//	 Propriedades geom√©tricas Viga isolada
 //
-    	av=((bv[vv]+0.3)*hv[vv])+(bv[vv]*(hl[vl]-0.05)); // ·rea viga (isolada) m2
+    	av=((bv[vv]+0.3)*hv[vv])+(bv[vv]*(hl[vl]-0.05)); // √°rea viga (isolada) m2
     	ppv=av*2.5;                                      // pp viga tf/m
 
-	    me=((bv[vv]+0.3)*(pow(hv[vv],2))/2)+bv[vv]*(hl[vl]-0.05)*(hv[vv]+(hl[vl]-0.05)/2);						// momento est·tico
+	    me=((bv[vv]+0.3)*(pow(hv[vv],2))/2)+bv[vv]*(hl[vl]-0.05)*(hv[vv]+(hl[vl]-0.05)/2);						// momento est√°tico
 
 	    ygv=me/av;                                       // cg viga isolada
 
-//	 momento inÈrcia viga isolada
+//	 momento in√©rcia viga isolada
 
 	iv=(bv[vv]+0.30)*pow(hv[vv],3)/12+(bv[vv]+0.30)*hv[vv]*pow(((hv[vv]/2)-ygv),2)+bv[vv]*pow((hl[vl]-0.05),3)/12+bv[vv]*(hl[vl]-0.05)*pow((hv[vv]+((hl[vl]-0.05)/2)-ygv),2);
 
 //--------------------------------------------------------------------------------------------------------
 
 
-//	  propriedades seÁ„o composta
+//	  propriedades se√ß√£o composta
 
-	avc=av+bv[vv]*0.10; //·rea seÁ„o composta m2
+	avc=av+bv[vv]*0.10; //√°rea se√ß√£o composta m2
 
 	mec=((bv[vv]+0.3)*pow(hv[vv],2)/2)+bv[vv]*(hl[vl]-0.05)*(hv[vv]+(hl[vl]-0.05)/2)+ bv[vv]*0.10*(hv[vv]+hl[vl]+0.05);
 
 	ygcv=mec/avc;
 
-    ppvc=ppv+(bv[vv]*0.10*2.5);  // pp viga seÁ„o composta (tf/m)
+    ppvc=ppv+(bv[vv]*0.10*2.5);  // pp viga se√ß√£o composta (tf/m)
 
 
 
-//	 momento inÈrcia seÁ„o composta
+//	 momento in√©rcia se√ß√£o composta
 
 	ivc=(bv[vv]+0.30)*pow(hv[vv],3)/12+(bv[vv]+0.30)*hv[vv]*pow(((hv[vv]/2)-ygcv),2)+bv[vv]*pow((hl[vl]+0.05),3)/12+bv[vv]*(hl[vl]+0.05)*pow((hv[vv]+((hl[vl]+0.05)/2)-ygcv),2);
 
@@ -2834,7 +2834,7 @@ if (k==0){
 
 //--------------------------------------------------------------------------------------------------------
 
-//	  mÛdulo resistente
+//	  m√≥dulo resistente
 
 	wvi=iv/ygv;
     wvs=iv/(ygv-(hv[vv]+hl[vl]-0.05));
@@ -2843,20 +2843,20 @@ if (k==0){
 
 //--------------------------------------------------------------------------------------------------------
 
-//	 momentos e tensıes (verificaÁ„o transitÛria na fase de montagem)
+//	 momentos e tens√µes (verifica√ß√£o transit√≥ria na fase de montagem)
 
-	mvt=(((rl[0]+rl[1])/ll[vl])*2+ppv)*pow(llv,2)/8;	// momento transitÛrio (tf.m)
+	mvt=(((rl[0]+rl[1])/ll[vl])*2+ppv)*pow(llv,2)/8;	// momento transit√≥rio (tf.m)
 	                                            // pp e capa + ppviga
 
 	tvi=mvt/(100*wvi);
-    tvs=mvt/(100*wvs);   // tensıes na seÁ„o isolada (mpa)
+    tvs=mvt/(100*wvs);   // tens√µes na se√ß√£o isolada (mpa)
 
 
-//	 momentos e tensıes verificaÁ„o transitÛria somente devido ao peso prÛprio
+//	 momentos e tens√µes verifica√ß√£o transit√≥ria somente devido ao peso pr√≥prio
 
 	mvpp=(ppv*pow(llv,2))/8;	 // momento devido ao pp da viga	(tf.m)
 
-	tvppi=mvpp/(100*wvi);// tensıes devido ao pp da viga	(mpa)
+	tvppi=mvpp/(100*wvi);// tens√µes devido ao pp da viga	(mpa)
 
 	tvpps=mvpp/(100*wvs);
 
@@ -2867,11 +2867,11 @@ if (k==0){
 
 //	tvpar=mvpar/(100*wcvi)
 
-//	 momentos e tensıes durante vida ˙til (els)
+//	 momentos e tens√µes durante vida √∫til (els)
 //
 //  com: divide por 1.2 p/ calcular carga por metro na viga
 //
-//  com: multiplica por 2 p/ considerar a contribuiÁ„o dos dois lados de lajes
+//  com: multiplica por 2 p/ considerar a contribui√ß√£o dos dois lados de lajes
 //
 
 //--------------------------------------------------------------------------------------------------------
@@ -2880,19 +2880,19 @@ if (k==0){
 
 	mvq=(rl[4]/ll[vl])*2*pow(llv,2)/(2*8);   // tf.m / sobre-carga (q)
 
-	tvgi=mvg/(wcvi*100);	// tensıes devido pav+rev+par rel. ‡ sÁ composta(mpa)
+	tvgi=mvg/(wcvi*100);	// tens√µes devido pav+rev+par rel. √† s√ß composta(mpa)
 
-	tvq=mvq/(wcvi*100);	// tensıes devido ‡ sc (q) rel. ‡ sÁ composta (mpa)
+	tvq=mvq/(wcvi*100);	// tens√µes devido √† sc (q) rel. √† s√ß composta (mpa)
 
 
-//	 c·lculo momento de c·lculo
+//	 c√°lculo momento de c√°lculo
 
-	mvd=(((1.3*rl[0]+1.4*rl[1]+1.4*(rl[2]/2)+1.4*(rl[3]/2)+1.4*(rl[4]/2))*(2/ll[vl])+1.3*ppv)*pow((llv-lp),2)/8)/100;		// momento de c·lculo mn.m
+	mvd=(((1.3*rl[0]+1.4*rl[1]+1.4*(rl[2]/2)+1.4*(rl[3]/2)+1.4*(rl[4]/2))*(2/ll[vl])+1.3*ppv)*pow((llv-lp),2)/8)/100;		// momento de c√°lculo mn.m
 
 //--------------------------------------------------------------------------------------------------------
 
 
-//	reaÁıes nos pilares
+//	rea√ß√µes nos pilares
 
   rpilar=((rl[0]+rl[1]+rl[2]+rl[3]+rl[4])*(2/ll[vl])+ppv)*llv*numpav*1.02;  // [tf]
 
@@ -2919,11 +2919,11 @@ if (k==0){
 //--------------------------------------------------------------------------------------------------------
 
 
-//	  protens„o em vigas
-//	  protens„o na pista (mn)
+//	  protens√£o em vigas
+//	  protens√£o na pista (mn)
 
 
-	pav=-0.97*(na[ana]+nb[anb])*0.0001014*1453;   // mn	(sinal - / compress„o)
+	pav=-0.97*(na[ana]+nb[anb])*0.0001014*1453;   // mn	(sinal - / compress√£o)
 
 	soma=(na[ana]*epa+nb[anb]*epb)*0.97*0.0001014*1453*(-1); //(sinal -)
 
@@ -2931,7 +2931,7 @@ if (k==0){
 
 	sptv=(-1)*((pav/av)+(soma/wvi))+(40.966/pow(fckpm[pm],0.5))*((pav/av)+(soma2/iv));
 
-//	 protens„o apÛs trasnferÍncia (mn)
+//	 protens√£o ap√≥s trasnfer√™ncia (mn)
 
 	pat=pav-(na[ana]+nb[anb])*0.0001014*sptv;
 
@@ -2942,7 +2942,7 @@ if (k==0){
 
 	vtsupt=(pat/av)+(soma3/wvs);
 
-//	 protens„o em um tempo infinito (mn)
+//	 protens√£o em um tempo infinito (mn)
 
 	vpinf=0.8*pav;	  // perda estimada (20%)
 
@@ -2953,24 +2953,24 @@ if (k==0){
 //--------------------------------------------------------------------------------------------------------
 
 
-//		tensıes limites
+//		tens√µes limites
 
-//	lcj=0.49*fckpm(pm)                 // limite compress„o fckj (transitÛria)
-	ltjv=1.5*0.7*0.3*pow((0.7*fckpm[pm]),(2/3)); // limite traÁ„o fckj(retangular)
+//	lcj=0.49*fckpm(pm)                 // limite compress√£o fckj (transit√≥ria)
+	ltjv=1.5*0.7*0.3*pow((0.7*fckpm[pm]),(2/3)); // limite tra√ß√£o fckj(retangular)
 
-//	lck=0.7*fckpm(pm)                // limite compress„o fck   (els)
-	ltkv=1.5*0.7*0.3*pow(fckpm[pm],(2/3)); // limite traÁ„o fck   (els)
-
-
+//	lck=0.7*fckpm(pm)                // limite compress√£o fck   (els)
+	ltkv=1.5*0.7*0.3*pow(fckpm[pm],(2/3)); // limite tra√ß√£o fck   (els)
 
 
-//	   tensıes els (mpa)
+
+
+//	   tens√µes els (mpa)
 
 	descompv=tvi+tvgi+0.3*tvq+vtinpi;
 	ffissv=tvi+tvgi+0.4*tvq+vtinpi;
 
 //
-//		tensıes atuantes nas fases transitÛrias
+//		tens√µes atuantes nas fases transit√≥rias
 //
 
 	tdiv=vtinpt+tvppi;	// desmoldagem inferior
@@ -2987,7 +2987,7 @@ if (k==0){
 
 /////////////////////////////////////////////////////
 //
-//				  PROTENS√O SUPERIOR (Considerado apenas na transitÛria)
+//				  PROTENS√ÉO SUPERIOR (Considerado apenas na transit√≥ria)
 //
 //////////////////////////////////////////////////////
 
@@ -3031,17 +3031,17 @@ if (k==0){
 
 //--------------------------------------------------------------------------------------------------------
 
-//	   estado limite ˙ltimo
+//	   estado limite √∫ltimo
 
 	ht=hv[vv]+hl[vl]+0.05; //   altura total do pavimento (m)
 
 	da=ht-0.05;
-    db=ht-0.10; // braÁos de alavanca (m)
+    db=ht-0.10; // bra√ßos de alavanca (m)
 
 
 
-//	ep=195000 // mÛdulo aÁo protens„o mpa
-//	es=210000 // mÛdulo aÁo mpa
+//	ep=195000 // m√≥dulo a√ßo protens√£o mpa
+//	es=210000 // m√≥dulo a√ßo mpa
 
 	apa=na[ana]*0.0001014;
     apb=nb[anb]*0.0001014;
@@ -3050,16 +3050,16 @@ if (k==0){
 
 //--------------------------------------------------------------------------------------------------------
 //
-//	  rotina 2006 p c·lculo de x (linha-neutra)
-//		  c·lculo do momento resistente
+//	  rotina 2006 p c√°lculo de x (linha-neutra)
+//		  c√°lculo do momento resistente
 //
 
 	xv=(1486.9*(apa+apb)+434.8*(as))/(0.4857*fckpm[pm]*bv[vv]);
 
-	za=ht-0.05-0.4*xv;  // braÁo de alavanca camada a (m)
-	zb=za-0.05;		   // braÁo de alavanca camada b (m)
+	za=ht-0.05-0.4*xv;  // bra√ßo de alavanca camada a (m)
+	zb=za-0.05;		   // bra√ßo de alavanca camada b (m)
 
-	mresv=1486.9*(apa*za+apb*zb); // momento resistido pela seÁ„o (mn.m)
+	mresv=1486.9*(apa*za+apb*zb); // momento resistido pela se√ß√£o (mn.m)
 
 
 //////////////////////////////////////////////////////////////
@@ -3078,7 +3078,7 @@ if (k==0){
 
 //--------------------------------------------------------------------------------------------------------
 
-//		 RESTRI«√O (Resistente tem q ser superior ao de c·lculo)
+//		 RESTRI√á√ÉO (Resistente tem q ser superior ao de c√°lculo)
 //		 Estado em Vazio -
 //       ZONA INFERIOR - COMPRIMIDA ?
 
@@ -3141,7 +3141,7 @@ if (k==0){
 
 //       descompressao
 
-	if (descompv<=0.05)    // adotado 0.05 como margem e referÍncia
+	if (descompv<=0.05)    // adotado 0.05 como margem e refer√™ncia
 	                     gv[8]=0;
 	                     else
 						 gv[8]=(descompv/0.05)-1;
@@ -3149,8 +3149,8 @@ if (k==0){
 
 //	  FORMACAO DE FISSURA
 
-	if (ffissv<=(2*ltkv)) 			   // limite traÁ„o jem
-	                      gv[9]=0;			   // els - formaÁ„o fissura
+	if (ffissv<=(2*ltkv)) 			   // limite tra√ß√£o jem
+	                      gv[9]=0;			   // els - forma√ß√£o fissura
 	                      else
 						  gv[9]=(ffissv/(2*ltkv))-1;
 
@@ -3159,7 +3159,7 @@ if (k==0){
 //
 
 	if (mresv>=(0.98*mvd))
-	                    gv[10]=0;					// restriÁ„o do momento
+	                    gv[10]=0;					// restri√ß√£o do momento
 	                    else
                         {
 						if (mresv<=0)
@@ -3195,18 +3195,18 @@ if (k==0){
 
 
     if (ht<=hmax)
-	                gv[15]=0;			  // altura m·xima do pavimento
+	                gv[15]=0;			  // altura m√°xima do pavimento
 	                else
 					gv[15]=(ht/hmax)-1;
 
 
     if (bv[vv]<=bmax)
-	                    gv[16]=0;		  // largura m·xima viga
+	                    gv[16]=0;		  // largura m√°xima viga
 	                    else
-						gv[16]=((100*bv[vv])/bmax)-1;	//teste: diminuiÁ„o domÌnio
+						gv[16]=((100*bv[vv])/bmax)-1;	//teste: diminui√ß√£o dom√≠nio
 
 
-	if (llv>=(dminx*(dl)+dminy*(1-dl))) 		// dist‚ncia mÌnima entre pilares
+	if (llv>=(dminx*(dl)+dminy*(1-dl))) 		// dist√¢ncia m√≠nima entre pilares
 	                                      gv[17]=0;
 		                                  else
 						            gv[17]=((dminx*(dl)+dminy*(1-dl))/llv)-1;
@@ -3214,7 +3214,7 @@ if (k==0){
 
 
 	if (na[ana]>=nb[anb]) 			  // evitar mais ferros na segunda camada(nb(anb))
-	              gv[18]=0;		  // em relaÁ„o ‡ primeira(na)
+	              gv[18]=0;		  // em rela√ß√£o √† primeira(na)
 				  else
 				  gv[18]=(float(nb[anb])/float(na[ana]))-1;
 
@@ -3227,7 +3227,7 @@ if (k==0){
 
 
 //
-//	   somatÛrio penalidades vigas
+//	   somat√≥rio penalidades vigas
 //
 	penv=gv[0]+gv[1]+gv[2]+gv[3]+gv[4]+gv[5]+gv[6]+gv[7]+gv[8]+gv[9]+gv[10]+gv[11]+gv[12]+gv[13]+gv[14]+gv[15]+gv[16]+gv[17]+gv[18]+gv[19];
 
@@ -3235,7 +3235,7 @@ if (k==0){
 
 //	   PENALIDADE TOTAL
 
-	pentotal=1+15*(penl+penv);    // intensidade penalizaÁ„o k=10
+	pentotal=1+15*(penl+penv);    // intensidade penaliza√ß√£o k=10
 
  //--------------------------------------------------------------------------------------------------------
 //
@@ -3271,9 +3271,9 @@ if (k==0){
 
 //////////////////////////////////////////////////////////////////////////////
 //
-//	   c·lculo funÁ„o aptid„o
+//	   c√°lculo fun√ß√£o aptid√£o
 //
-//	   coment·rio: o v„o da laje È subtraÌdo da largura da viga
+//	   coment√°rio: o v√£o da laje √© subtra√≠do da largura da viga
 //				   e o da viga do lado do pilar
 //
 ///////////////////////////////////////////////////////////////////////////////
@@ -3286,7 +3286,7 @@ if (k==0){
 	vpmp=sp*3.5*1.15;           				 // volume pilar - 01 lance
 											 // 1.15 para considerar o console
 
-//   c·lculo taxa aÁo pilar
+//   c√°lculo taxa a√ßo pilar
 
 	if (pm>1) {
 
@@ -3302,11 +3302,11 @@ if (k==0){
               }
 
 
-//   aÁo demais elementos
+//   a√ßo demais elementos
 
-	vapv=(na[ana]+nb[anb])*0.0001014*(llv-lp);    // volume aÁo protens„o viga
-	vapl=apl[vl]*(llj-bv[vv]);		         // volume aÁo protens„o laje
-	vadv=npt[anpt]*bp[abp]*(llv-lp);               // volume aÁo doce viga
+	vapv=(na[ana]+nb[anb])*0.0001014*(llv-lp);    // volume a√ßo protens√£o viga
+	vapl=apl[vl]*(llj-bv[vv]);		         // volume a√ßo protens√£o laje
+	vadv=npt[anpt]*bp[abp]*(llv-lp);               // volume a√ßo doce viga
 
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -3319,13 +3319,13 @@ custoconc=((vpmv*cpm[pm]*qdv)*1.5+(vpml*cpm[pm]*qdl)+(vpmp*cpm[pm]*qdp*1.5))*num
 
 custoconcml=vml*ccml[cml]*1.3*numpav;
 
-// 1.5 pq concreto viga e pilar È mais caro
+// 1.5 pq concreto viga e pilar √© mais caro
 
-// em 20/11/06 foi desconsiderado o custo fundaÁ„o
+// em 20/11/06 foi desconsiderado o custo funda√ß√£o
 
 	/////////////////////////////////
 	// custo pilar: REVERRRRRRRRRRRRRRRRRRR
-	// x 1.2 pconsiderar fundaÁ„o!!!!!!!!!!!!!!!!!!!!
+	// x 1.2 pconsiderar funda√ß√£o!!!!!!!!!!!!!!!!!!!!
 	////////////////////////////////
 
 ////////////////////////////////////////////////
@@ -3337,7 +3337,7 @@ custoconcml=vml*ccml[cml]*1.3*numpav;
 if (vl<28)
               dop=24;
 			  else
-			  dop=36;         // custos despesas operacionais unit·rios
+			  dop=36;         // custos despesas operacionais unit√°rios
 
 cdop=qdl*(llj-bv[vv])*1.2*dop*numpav;       // custos despesas operacionais total
 
@@ -3388,9 +3388,9 @@ ctmt=1500*ctmv*numpav+ctmp;
 
 /////////////////////////////////////////////////////////////////////////////////////
 //
-//	   CUSTOS DAS PERDAS DA PISTA E N⁄MERO DE PISTAS UTILIZADAS
+//	   CUSTOS DAS PERDAS DA PISTA E N√öMERO DE PISTAS UTILIZADAS
 //
-//	              OBS: ROTINA EM CONSTRU«√O	/ falta custo utilizaÁao
+//	              OBS: ROTINA EM CONSTRU√á√ÉO	/ falta custo utiliza√ßao
 //										  falta acrescentar na funcao custo
 //
 /////////////////////////////////////////////////////////////////////////////////////
@@ -3405,7 +3405,7 @@ ctmt=1500*ctmv*numpav+ctmp;
 //					   qdpl=qdpl-1
 //					   endif
 
-//ptal=((qdpl*lpl)-(qdl*lljc))*apl(vl)*7857 // perda do aÁo de protensao em kg
+//ptal=((qdpl*lpl)-(qdl*lljc))*apl(vl)*7857 // perda do a√ßo de protensao em kg
 
 //lpv=60						// comprimento pista viga
 
@@ -3417,7 +3417,7 @@ ctmt=1500*ctmv*numpav+ctmp;
 //                       qdpv=qdpv-1
 //					   endif
 
-//ptav=((qdpv*lpv)-(qdv*llv))*(na(ana)+nb(anb))*0.0001014*7810	// perda aÁo de prot em kg
+//ptav=((qdpv*lpv)-(qdv*llv))*(na(ana)+nb(anb))*0.0001014*7810	// perda a√ßo de prot em kg
 
 
 
@@ -3426,7 +3426,7 @@ ctmt=1500*ctmv*numpav+ctmp;
 
 //////////////////////////////////////////////////////////////////////
 //
-//	                        Custo AÁos: PROTENS√O E PASSIVO
+//	                        Custo A√ßos: PROTENS√ÉO E PASSIVO
 //
 //////////////////////////////////////////////////////////////////////
 
@@ -3439,11 +3439,11 @@ ctmt=1500*ctmv*numpav+ctmp;
 
 	custope=0.86912*(llv-lp)*qdv*numpav*cad;  // custo porta estribo 4 6mm
 
-	custolig=12.125*qdp*numpav*cad;        // custo arm ligaÁ„o 5 12.5mm (c=2,5 m)
+	custolig=12.125*qdp*numpav*cad;        // custo arm liga√ß√£o 5 12.5mm (c=2,5 m)
 
 	custoneo=qdp*2*numpav*22.5;   // r$ 22.5
 
-// 1.085 pq cordoalha em viga È mais cara
+// 1.085 pq cordoalha em viga √© mais cara
 
 
 ///////////////////////////////////////////////////////////////////
@@ -3524,26 +3524,26 @@ double transformar (individuo pop[],variavel var[],int n,int l){
 		a=0;
 		s=0;
 		b=0;
-		// inicio calcula a posiÁ„o de inicio da transformaÁ„o do vetor bin·rio
+		// inicio calcula a posi√ß√£o de inicio da transforma√ß√£o do vetor bin√°rio
 		for(int j=0;j<n;j++){
-			s+=var[j].tamanho;        //"s ser· a posiÁ„o de inicio da conta"
+			s+=var[j].tamanho;        //"s ser√° a posi√ß√£o de inicio da conta"
 		}
 		//fim
 
-		//inicio transforma o vetor bin·rio em um numeor natural
+		//inicio transforma o vetor bin√°rio em um numeor natural
 		for(int i=int(s);i<(int((s+var[n].tamanho)));i++){
 				b=b+(float(pop[l].binario[i]))*pow(2,var[n].tamanho-i+s-1);
 			}
 		//fim
 
-		//inicio calcula o valor da vari·vel de acordo com os limites e a precis„o desejadas
+		//inicio calcula o valor da vari√°vel de acordo com os limites e a precis√£o desejadas
 		a+=(var[n].superior-var[n].inferior);
 		a=a*b;
 		a=a/(pow(2,double(var[n].tamanho))-1);
 		a+=var[n].inferior;
 		//fim
 
-		//inicio calcula o valor da vari·vel com a prscis„o desejada
+		//inicio calcula o valor da vari√°vel com a prscis√£o desejada
 		a=double((int(a*pow(10,var[n].precisao))));
 		a=a/pow(10,var[n].precisao);
 		return a;
@@ -3565,7 +3565,7 @@ void elitismo1(individuo pop[],individuo npop[],int ptamanho,int elitismo){
 	int contador=0;
 	contador =elitismo; // garante que o numero de copias seja igual a de elitismo
 	int contador2=0;
-		//inicio garante que sÛ sejam copiados individuos diferentes
+		//inicio garante que s√≥ sejam copiados individuos diferentes
 			while(contador>0){
 				if(gemeos(pop,contador2+1,contador2)){
 					contador2++;
@@ -3585,7 +3585,7 @@ int hroleta(individuo pop[],int itamanho){
               double v;
               double r=0;
               double t;
-              t=pop[0].aptidao+pop[itamanho-1].aptidao; // valor de referÍncia necess·rio para a invers„o
+              t=pop[0].aptidao+pop[itamanho-1].aptidao; // valor de refer√™ncia necess√°rio para a invers√£o
               for(int i=0;i<itamanho;i++){
             	  s=(t-pop[i].aptidao)+s;
                           }
@@ -3594,7 +3594,7 @@ int hroleta(individuo pop[],int itamanho){
             	  u=((t-pop[int(r)].aptidao)*100)/s+u;
             	  r++;
               }
-              return int(r-1);// retorna a posiÁ„o do individuo sorteado
+              return int(r-1);// retorna a posi√ß√£o do individuo sorteado
         }
 
 
@@ -3602,7 +3602,7 @@ individuo troca(individuo pop[],int itamanho,int s,int a,int b){
 	  individuo aux;
 	  aux.binario=new int[itamanho];
 	  for(int i=0;i<s;i++){
-	          aux.binario[i]=pop[a].binario[i];// preenche o comeÁo do vetor
+	          aux.binario[i]=pop[a].binario[i];// preenche o come√ßo do vetor
 	  }
 	  for(int i=itamanho-1;i>=s;i--){
 	  	      aux.binario[i]=pop[b].binario[i]; // preenche o resto do vetor
@@ -3615,7 +3615,7 @@ int cruzamento(individuo pop[],individuo npop[],int elitismo,int phroleta,int it
 	int contador,marcador;
 	contador=phroleta/2-1;
 	marcador=0;
-	 //inicio garante que individuos iguais n„o sejam cruzados
+	 //inicio garante que individuos iguais n√£o sejam cruzados
 	 while(contador>0){
 		int a,b=0;
 		a=hroleta(pop,itamanho);
@@ -3715,9 +3715,9 @@ void funcaoGrafico(grafico aptidoes[], int ngeracoes){
 
                  fputs(tudo, p);
                  if (ferror(p))
-                 printf("\nErro na gravaÁ„o");
+                 printf("\nErro na grava√ß√£o");
                  else{
-                      printf("\nGravaÁ„o realizada com sucesso");
+                      printf("\nGrava√ß√£o realizada com sucesso");
 
                       }
            }
@@ -3733,9 +3733,9 @@ void funcaoGrafico(grafico aptidoes[], int ngeracoes){
 void evoluir(individuo npop[],individuo pop[],int phroleta,int itamanho,int ptamanho,int elitismo){
 	int marcador;
 	elitismo1(pop,npop,ptamanho,elitismo);//preenche os primeiros individuos mais aptos
-	marcador=cruzamento(pop,npop,elitismo,phroleta,itamanho,ptamanho);//realiza o cruzameto e mostra a proxiam posiÁ„o
+	marcador=cruzamento(pop,npop,elitismo,phroleta,itamanho,ptamanho);//realiza o cruzameto e mostra a proxiam posi√ß√£o
 	preencher(npop,ptamanho,itamanho,marcador,elitismo);
-    // preenche aleatoriamente o resto da populaÁ„o
+    // preenche aleatoriamente o resto da popula√ß√£o
 }
 
 
@@ -3747,7 +3747,7 @@ void unicidade(individuo pop[],int ptamanho,int itamanho, int elitismo){
 			}
 		}
 	}
-   ordenar(pop,ptamanho);//garante que a populaÁ„o seja reordenada
+   ordenar(pop,ptamanho);//garante que a popula√ß√£o seja reordenada
 }
 
 
@@ -3776,7 +3776,7 @@ void mutacao(individuo pop[],int ptamanho,int itamanho,int elitismo, int pmutaca
 void menu(void){
 	    cout << "******************************************************" << endl;
 	    cout << "*            Algoritmo Genetico                      *" << endl;
-	    cout << "*                                         vers„o:1.0 *" << endl;
+	    cout << "*                                         vers√£o:1.0 *" << endl;
 	    cout << "*      Escolha uma dentre as opcoes abaixo           *" << endl ;
 	    cout << "*       [0] Sair                                     *" << endl;
 		cout << "*       [1] Entrada de dados                         *" << endl;
@@ -3788,7 +3788,7 @@ void menu(void){
 
 
 void smenu2(int ptamanho,int ngeracoes,int elitismo,int phroleta, int pmutacao){
-	cout << "Os dados do seu AG est„o assim " << endl;
+	cout << "Os dados do seu AG est√£o assim " << endl;
 	cout << "O tamannho da populacao e =" << ptamanho << endl;
 	cout << "O criterio de parada e o numero de geracoes, sendo =" << ngeracoes<< endl;
 	cout << "A porcentagem de elitismo e =" << elitismo << "%"<< endl;
@@ -3878,16 +3878,16 @@ int laco2(int opcao2,int ptamanho,int ngeracoes,int elitismo,int phroleta, int p
 
 int main() {
 
-    // Vari·veis que ser„o enviadas para avaliar cada indivÌduo;
+    // Vari√°veis que ser√£o enviadas para avaliar cada indiv√≠duo;
 
-    float dminx, dminy;  //As dist‚ncias mÌnimas entre os eixos de pilares
-    float lx, ly;        //Dimensıes do pavimento em x e y
+    float dminx, dminy;  //As dist√¢ncias m√≠nimas entre os eixos de pilares
+    float lx, ly;        //Dimens√µes do pavimento em x e y
     float ajx, ajy;
     float hmax;          //Altura max do pavimento
     float  bmax;         //largura max da laje
     float q, gpr, gpl;   //Cargas
-    int numind;          // numero de indivÌduos
-    float mx,my;         // ModulaÁıes em X e Y
+    int numind;          // numero de indiv√≠duos
+    float mx,my;         // Modula√ß√µes em X e Y
     int nxmax, nymax;
     int nvv;
     int numgen;
@@ -3908,7 +3908,7 @@ int main() {
 
 
 
-    //Custo dos aÁos
+    //Custo dos a√ßos
     float cap =7;
     float cad = 4;
 
@@ -3929,9 +3929,9 @@ int main() {
    cpm[2]=216;
    cpm[3]=233;
 
-   //    DETERMINA«√O TAMANHO DO CROMOSSOMO EM FUN«√O MODULA«√O MÕNIMA
-   //	 FAIXAS DE V√OS: 1-4 (2BITS) ; 1-8 (3BITS) ; 1-16 (4BITS)
-   //	 NXMAX e NYMAX : N⁄EROS DE BITS DE NA E NB
+   //    DETERMINA√á√ÉO TAMANHO DO CROMOSSOMO EM FUN√á√ÉO MODULA√á√ÉO M√çNIMA
+   //	 FAIXAS DE V√ÉOS: 1-4 (2BITS) ; 1-8 (3BITS) ; 1-16 (4BITS)
+   //	 NXMAX e NYMAX : N√öEROS DE BITS DE NA E NB
 
 
 
@@ -3940,26 +3940,26 @@ int main() {
 
 
 	int itamanho=100;                     //valor do maximo tamanho de um individuo referente ao cromossomo
-	int ptamanho=1000;                     //tamanho da populaÁ„o
-	int pmutacao=30;                      //porcentagem de mutaÁ„o
-	int ngeracoes=5000;                   //numero de geraÁıes
+	int ptamanho=1000;                     //tamanho da popula√ß√£o
+	int pmutacao=30;                      //porcentagem de muta√ß√£o
+	int ngeracoes=5000;                   //numero de gera√ß√µes
 	int elitismo=5;                       //numero de individuos copiados devido ao elitismo
 	int phroleta=90;                      //numero de individuos gerados a partir do cruzamento
-	int opcao=10;                         //guarda o valor da opÁ„o escolhida no menu 1
-	int opcao2=10;                        //guarda a opÁ„o escolhida nos submenus
+	int opcao=10;                         //guarda o valor da op√ß√£o escolhida no menu 1
+	int opcao2=10;                        //guarda a op√ß√£o escolhida nos submenus
 	int nvariaveis1;                      //guarda o numero de variaveis
-	int num_var;                          //n˙mero de variaveis implementadas no bloco de notas
+	int num_var;                          //n√∫mero de variaveis implementadas no bloco de notas
 	int num[100];                         //vetor que vai armazenar as variaveis implementadas no bloco de notas
-	float penalty[700];                   //vetor que armazena o valor da penalidade dos individuos da populaÁ„o
-	char resposta_populacao;              //saber se o usu·rio deseja que a populaÁ„o ser· aleatoÛria ou n„o
-	char resposta_grafico;                //saber se o usu·rio deseja criar o gr·fico das aptidıes
-	FILE *fp;                             //ponteiro que ir· abrir o bloco de notas
-	struct individuo pop[1000];            //inicia a populaÁ„o
-	struct individuo npop[1000];           //inicia a populaÁ„o que ser· preenchida com os operadores genÈticos
-	struct variavel var[1000];             //guardar· as caractÈristicas das variavÈis
-	struct grafico aptidoes[ngeracoes];   //vetor que guarda as aptidıes dos melhores individuos para formar o gr·fico
+	float penalty[700];                   //vetor que armazena o valor da penalidade dos individuos da popula√ß√£o
+	char resposta_populacao;              //saber se o usu√°rio deseja que a popula√ß√£o ser√° aleato√≥ria ou n√£o
+	char resposta_grafico;                //saber se o usu√°rio deseja criar o gr√°fico das aptid√µes
+	FILE *fp;                             //ponteiro que ir√° abrir o bloco de notas
+	struct individuo pop[1000];            //inicia a popula√ß√£o
+	struct individuo npop[1000];           //inicia a popula√ß√£o que ser√° preenchida com os operadores gen√©ticos
+	struct variavel var[1000];             //guardar√° as caract√©risticas das variav√©is
+	struct grafico aptidoes[ngeracoes];   //vetor que guarda as aptid√µes dos melhores individuos para formar o gr√°fico
     srand(time(0));
-//inicio entra no laÁo 0
+//inicio entra no la√ßo 0
     while(opcao!=0){
         opcao2=10;
 		opcao=laco(opcao);
@@ -3977,10 +3977,10 @@ int main() {
             	cin>>lx;
                 cout << "Dimensao pavimento Y(m): "<<endl;
             	cin>>ly;
-                // Altura m·xima do pavimento (Laje+Viga+Capa)=HT
+                // Altura m√°xima do pavimento (Laje+Viga+Capa)=HT
 	            cout << "Altura maxima pavimento (laje+viga)(m): "<<endl;
 	            cin>>hmax;
-                //Largura m·xima da vig BV(VV)
+                //Largura m√°xima da vig BV(VV)
 	            cout << "Largura maxima da viga(m): (.40,.50.. ou .90) "<<endl;
                 cin>>bmax;
                 cout << "Sobre-Carga (Tf/m2): "<<endl;
@@ -3989,7 +3989,7 @@ int main() {
                 cin>>gpr;
                 cout << "Paredes sobre laje (Tf/m2): "<<endl;
                 cin>>gpl;
-                ajx=lx/dminx;        //ajuste direÁ„o x
+                ajx=lx/dminx;        //ajuste dire√ß√£o x
 
              	if (ajx>4) {
 	                            if (ajx<9)
@@ -4001,7 +4001,7 @@ int main() {
 				  else
 				  nxmax=2;
 
-               	ajy=ly/dminy;		// ajuste direÁ„o y
+               	ajy=ly/dminy;		// ajuste dire√ß√£o y
 
              	if (ajy>4) {
 	              if (ajy<9)
@@ -4015,7 +4015,7 @@ int main() {
 
 
 
-                //   determinaÁ„o tamanho do cromossomo em funÁ„o da base viga
+                //   determina√ß√£o tamanho do cromossomo em fun√ß√£o da base viga
 
 
                	if (bmax>0.60)
@@ -4058,7 +4058,7 @@ int main() {
 	    	}
 	    //fim
 		}
-		//inicio gera a populaÁ„o inicial
+		//inicio gera a popula√ß√£o inicial
 
   if(opcao==3){
 
@@ -4109,7 +4109,7 @@ int main() {
             int contador=0;
 	    	int contador2=0;
 
-	    	cout << " \n\n\n\nVoce quer criar um grafico com a funÁ„o aptidao? Escreva 's' ou 'n' \n"<<endl;
+	    	cout << " \n\n\n\nVoce quer criar um grafico com a fun√ß√£o aptidao? Escreva 's' ou 'n' \n"<<endl;
 	        cout << "==>  ";
 	         cin >> resposta_grafico;
 
@@ -4117,7 +4117,7 @@ int main() {
 
 	    	while(contador!=ngeracoes){
 
-	    		cout << "geraÁao " << contador+1 << endl;
+	    		cout << "gera√ßao " << contador+1 << endl;
 	    		evoluir(npop,pop,phroleta,itamanho,ptamanho,elitismo);
                 copiar(npop,pop,ptamanho,elitismo);
                 mutacao(pop,ptamanho,itamanho,elitismo, pmutacao);
@@ -4151,7 +4151,7 @@ int main() {
 
             if(resposta_grafico == 'S' || resposta_grafico == 's'){
 	    	while(contador!=ngeracoes){
-	    		cout << "geraÁao " << contador+1 << endl;
+	    		cout << "gera√ßao " << contador+1 << endl;
 
     		    evoluir(npop,pop,phroleta,itamanho,ptamanho,elitismo);
 	    		copiar(npop,pop,ptamanho,elitismo);
@@ -4181,7 +4181,7 @@ int main() {
               }
 	    		exibir(pop,itamanho,ptamanho);
 	    	}
-	    	// problema ta agora sÛ na funÁ„o gr·fico
+	    	// problema ta agora s√≥ na fun√ß√£o gr√°fico
 	    	funcaoGrafico(aptidoes,ngeracoes);
 	    }
 	    //fim
