@@ -1,0 +1,652 @@
+#include <math.h>
+#include <cstdlib>
+#include <iostream>
+
+#include <stdio.h>
+
+
+using namespace std;
+//função potencia para numeros na forma double
+double pot(double base,double pot);
+//fim
+
+//Estrutura de um individuo
+struct individuo{
+	int *binario;//vetor com apenas numeros binários
+	double natural;//Serve para representar cada individuo como uma digital
+	double objetivo;//Serve para guardar o valor da função objetivo
+    bool restricao;//Serve para saber se as restrições foram satisfeitas
+    double aptidao;//Valor da função objetivo com a aplicação das penalidades
+};
+//fim
+
+//Estrutura que guarda as propiedades de uma variavel
+struct variavel{
+	int tamanho;//guarda o tamanho de bits necessarios da variável
+	int precisao;//guarda a precisão desejada para essa variável
+	double inferior;//Guarda o limite inferior da variável
+	double superior;//Guarda o limite superior da variável
+};
+//fim
+
+//tranforma o numero natural
+double transformar (individuo pop[],variavel var[],int n,int l);
+//fim
+
+//funcao que deve ser otimizada
+void fobjetivo(individuo pop[],int ptamanho,variavel var[]);
+//fim
+
+//Calcula a representaçao natural de cada variavel
+void avaliar(individuo pop[],int itamanho,int ptamanho);
+//fim
+
+//gemeos verifica se um individuo e igual ao outro
+bool gemeos(individuo pop[],int a, int b);
+//fim
+
+// copia os individuos mais aptos para a proxima geração
+void elitismo1(individuo pop[],individuo npop[],int ptamanho,int elitismo);
+//fim
+
+//gera posiçoes de individuos selecionados para o cruzamento baseado na ordem da populacao!
+int hroleta(individuo pop[],int itamanho);
+//fim
+
+//realiza o processo de troca no vetor binario
+individuo troca(individuo pop[],int itamanho,int s,int a,int b);
+
+void aptidao(individuo pop[],int ptamanho, variavel var[]);
+//fim
+
+//preenche a nova populacao com o cruzamento
+int cruzamento(individuo pop[],individuo npop[],int elitismo,int phroleta,int itamanho,int ptamanho);
+//fim
+
+//preenche o resto de uma população aleatoriamente
+void preencher(individuo npop[],int ptamanho,int itamanho,int marcador,int elitismo);
+//fim
+
+//Calcula o tamanho de um vetor binário necessário para representar as variaveis
+int tamanho(double b ,double c,int p);
+//fim
+
+//inicia a populacao
+void ainiciar (individuo pop[],int ptamanho,int itamanho);
+//fim
+
+//entra com os dados para as variaveis
+int edados(int nvariaveis1,variavel var[]);
+//fim
+
+//ordena a população em ordem crescente
+void ordenar(individuo pop[],int ptamanho);
+//fim
+
+//copia a populacao antiga para a nova populacao
+void copiar(individuo npop[],individuo pop[],int ptamanho);
+//fim
+
+//exibe os 10 melhores resultados e os 10 piores de acordo com a funçao objetivo
+void exibir(individuo pop[],int itamanho,int ptamanho,variavel var[]);
+//fim
+
+//preenche uma nova população a partir da anterior usando os operadores geneticos
+void evoluir(individuo npop[],individuo pop[],int phroleta,int itamanho,int ptamanho,int elitismo);
+//fim
+
+//torna a população formada por individuos distintos
+void unicidade(individuo pop[],int ptamanho,int itamanho);
+//fim
+
+//Gera mutaçao em uma população
+void mutacao(individuo pop[],int ptamanho,int itamanho,int elitismo);
+//fim
+
+//Imprime o menu inicial
+void menu(void);
+//fim
+
+//imprime o submenu 2
+void smenu2(int ptamanho,int ngeracoes,int elitismo,int phroleta);
+//fim
+
+//imprime o submenu 21 retornando o novo tamanho da populacao
+int smenu21(int ptamanho);
+//fim
+
+//imprime o submenu 22 retornando o numero de gerações para o critério de parada
+int smenu22(int ngeracoes);
+//fim
+
+//imprime o submenu 23 retornando a porcentagem de elitismo
+int smenu23(int elitismo);
+//fim
+
+//imprime o submenu 24 retornando a porcentagem de individuos para o cruzamento
+int smenu24(int phroleta);
+//fim
+
+//mantem o laço do menu de opcões
+int laco(int opcao);
+//fim
+
+//mantem o laço do submenu de opções
+int laco2(int opcao2,int ptamanho,int ngeracoes,int elitismo,int phroleta);
+//fim
+//inicio da função potência para numeros na forma double
+double pot(double base,double pot){ // função foi definida para numeros da forma double
+    double c=1;
+    for(int i=0; i<pot;i++){
+        c=c*base;
+    }
+    return(c);
+}
+//fim da função potência
+
+//trasnforma um vetor binário em variavéis
+//inicio da função tranformar
+double transformar (individuo pop[],variavel var[],int n,int l){
+		double a,s,b;
+		a=0;
+		s=0;
+		b=0;
+		// inicio calcula a posição de inicio da transformação do vetor binário
+		for(int j=0;j<n;j++){
+			s+=var[j].tamanho;        //"s será a posição de inicio da conta"
+		}
+		//fim
+
+		//inicio transforma o vetor binário em um numeor natural
+		for(int i=int(s);i<(int((s+var[n].tamanho)));i++){
+				b=b+(float(pop[l].binario[i]))*pot(2,var[n].tamanho-i+s-1);
+			}
+		//fim
+
+		//inicio calcula o valor da variável de acordo com os limites e a precisão desejadas
+		a+=(var[n].superior-var[n].inferior);
+		a=a*b;
+		a=a/(pot(2,double(var[n].tamanho))-1);
+		a+=var[n].inferior;
+		//fim
+
+		//inicio calcula o valor da variável com a prscisão desejada
+		a=double((int(a*pot(10,var[n].precisao))));
+		a=a/pot(10,var[n].precisao);
+		return a;
+		//fim
+	}
+//fim
+
+//inicio calcula a representaçao natural de cada variavel
+void avaliar(individuo pop[],int itamanho,int ptamanho){
+	for(int i=0;i<ptamanho;i++){
+		pop[i].natural=0;
+		for(int j=0;j<itamanho;j++){
+			pop[i].natural = pop[i].natural+(float(pop[i].binario[j]))*pot(2,itamanho-1-j);
+		}
+	}
+}
+//fim
+
+//inicio função que verifica se um individuo e igual ao outro
+bool gemeos(individuo pop[],int a, int b){
+	if(pop[a].natural==pop[b].natural){ //pop.natural como se fosse um dna
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+//fim
+
+//inicio copia os individuos mais aptos para a proxima geração
+void elitismo1(individuo pop[],individuo npop[],int ptamanho,int elitismo){
+	int contador=0;
+	contador =elitismo; // garante que o numero de copias seja igual a de elitismo
+	int contador2=0;
+		//inicio garante que só sejam copiados individuos diferentes
+			while(contador>0){
+				if(gemeos(pop,contador2+1,contador2)){
+					contador2++;
+			}
+			else{
+				npop[elitismo-contador]=pop[contador2];
+	             contador--;
+	             contador2++;
+			}
+		//fim
+	}
+}
+//fim
+
+//inicio gera individuos selecionados para o cruzamento baseado na aptidão da populacao!
+int hroleta(individuo pop[],int itamanho){
+			  double s=0;
+              double u=0;
+              double v;
+              double r=0;
+              double t;
+              t=pop[0].aptidao+pop[itamanho-1].aptidao; // valor de referência necessário para a inversão
+              for(int i=0;i<itamanho;i++){
+            	  s=(t-pop[i].aptidao)+s;
+                          }
+              v=rand()%100+1; //numero do sortei
+              while(u<v-1){
+            	  u=((t-pop[int(r)].aptidao)*100)/s+u;
+            	  r++;
+              }
+              return int(r-1);// retorna a posição do individuo sorteado
+        }
+//fim
+
+//inicio realiza o processo de troca no vetor binario-parte do cruzamento
+individuo troca(individuo pop[],int itamanho,int s,int a,int b){
+	  individuo aux;
+	  aux.binario=new int[itamanho];
+	  for(int i=0;i<s;i++){
+	          aux.binario[i]=pop[a].binario[i];// preenche o começo do vetor
+	  }
+	  for(int i=itamanho-1;i>=s;i--){
+	  	      aux.binario[i]=pop[b].binario[i]; // preenche o resto do vetor
+	  	  }
+        return aux;
+}
+//fim
+
+//inicio atribui a função que deve ser otimizada a população
+	void fobjetivo(individuo pop[],int ptamanho,variavel var[])
+    {
+    float j, k, g, l, n;
+	double x1=0;                
+	double x2=0;                
+    int i;   
+
+	for( i=0;i<ptamanho;i++)
+    {
+			x1=transformar(pop,var,0,i);
+			x2=transformar(pop,var,1,i);
+			g=pow(x1,2);
+			l=x2-g;
+			j=pow(l,2);
+			n=1-x1;
+			k=pow(n,2);
+            pop[i].objetivo=100*j+k;  
+            // função objetivo
+   }
+   }
+//inicio funções restrições do problema
+
+
+//inicio calcula a função aptidão de acordo com a penalização
+void aptidao(individuo pop[],int ptamanho, variavel var[]){
+double k=1E+20; // valor que atribui o peso da penalidade
+for(int i=0;i<ptamanho;i++){
+
+	  pop[i].aptidao=pop[i].objetivo;
+	  
+  }
+}
+//fim
+
+//inicio preenche a nova populacao com o cruzamento
+int cruzamento(individuo pop[],individuo npop[],int elitismo,int phroleta,int itamanho,int ptamanho){
+	int contador,marcador;
+	contador=phroleta/2-1;
+	marcador=0;
+	 //inicio garante que individuos iguais não sejam cruzados
+	 while(contador>0){
+		int a,b=0;
+		a=hroleta(pop,itamanho);
+		b=hroleta(pop,itamanho);
+		int s;
+		s=rand()%(itamanho-2)+1;
+	    npop[elitismo+marcador]=troca(pop,itamanho,s,a,b);
+		npop[elitismo+marcador+1]=troca(pop,itamanho,s,b,a);
+		marcador+=2;
+        contador--;
+  }
+	 //fim
+        return marcador;
+}
+//fim
+
+//inicio preenche aleatoriamente o resto da população
+void preencher(individuo npop[],int ptamanho,int itamanho,int marcador,int elitismo){
+	for(int i=(ptamanho-1);i>(marcador+elitismo-1);i--){
+		for (int j=0;j<itamanho;j++){
+			npop[i].binario[j]=rand()%2;
+		}
+	}
+}
+//fim
+
+//inicio calcula o tamanho de um vetor binário necessário para representar as variaveis
+int tamanho(double b ,double c,int p){
+	double m;
+	m=double(int(double(int(c*pot(10,p)))/pot(10,p)-double(int(b*pot(10,p)))/pot(10,p)));
+	m+=1;
+	m=log(m*pot(10,p))/log(2.00);//trasforma na base 2
+	return int(m);
+}
+//inicia aleatoriamente a população inicial
+void ainiciar (individuo pop[],int ptamanho,int itamanho){
+	for(int i=0;i<ptamanho;i++){
+		for(int j=0;j<itamanho;j++){
+			pop[i].binario[j] = rand()%2;
+			pop[i].natural = pop[i].natural+(float(pop[i].binario[j]))*pot(2,itamanho-1-j);
+			cout << pop[i].binario[j] ;
+    }
+    cout << "\t" << pop[i].natural << endl;
+   }
+}
+//fim
+
+//inicio entrada de dados para as variaveis
+int edados(int nvariaveis1,variavel var[]){
+    int p,s=0;
+	double b,c;
+    for(int i=0;i<nvariaveis1;i++){
+    	cout << "digite o limite inferior da variavel  " << i+1 << endl;
+		cin >> b;
+		var[i].inferior=b;
+		cout << "digite o limite superior da variavel  " << i+1 << endl;
+		cin >> c;
+		var[i].superior=c;
+		cout << "digite a precisao desejada da variavel  " << i+1 << endl;
+		cin >> p;
+		var[i].precisao=p;
+		var[i].tamanho=tamanho(b,c,p);
+		s+=var[i].tamanho;
+		}
+	return s;
+}
+//fim
+
+//ordena a população em ordem crescente de acordo com a aptidão
+void ordenar(individuo pop[],int ptamanho){
+for(int i= ptamanho-1;i>0;i--){
+        for(int j=0;j<i;j++){
+        	if(pop[j+1].aptidao < pop[j].aptidao){
+        			individuo aux;
+        			aux = pop[j];
+   	     			pop[j] = pop[j+1];
+   	     			pop[j+1]=aux;
+   	     			}
+   	     	 }
+   	    }
+}
+//fim
+
+
+//copia a populacao antiga para a nova população
+void copiar(individuo npop[],individuo pop[],int ptamanho){
+	for(int i=0;i<ptamanho;i++){
+		pop[i]=npop[i];
+	}
+}
+//fim
+
+
+//inicio exibe os 10 melhores resultados e os 10 piores de acordo com a funçao aptidão
+void exibir(individuo pop[],int itamanho,int ptamanho,variavel var[]){
+	cout << "Os 10 melhores individuos foram"<< endl;
+	for(int i=0;i<10;i++){
+		for(int j=0;j<itamanho;j++){
+			cout << pop[i].binario[j];
+	}
+        cout <<"  " << pop[i].aptidao <<endl;
+   }
+    cout << "O 10 piores resultados foram" << endl;
+    for(int i=0;i<10;i++){
+		for(int j=0;j<itamanho;j++){
+    			cout << pop[ptamanho-i-1].binario[j];
+    	}
+    cout << "  " << pop[ptamanho-i-1].aptidao << endl;
+    }
+    //inicio exibe o valor das variavéis otimas
+    cout << "O valor para o otimo foi de x1 =";
+    cout << transformar(pop,var,0,0) << endl;
+    cout << "O valor para o otimo foi de x2 =";
+    cout << transformar(pop,var,1,0) << endl;
+
+    //fim
+}
+//fim
+
+//inico preenche uma nova população a partir da anterior usando os operadores geneticos
+void evoluir(individuo npop[],individuo pop[],int phroleta,int itamanho,int ptamanho,int elitismo){
+	int marcador;
+	elitismo1(pop,npop,ptamanho,elitismo);//preenche os primeiros individuos mais aptos
+	marcador=cruzamento(pop,npop,elitismo,phroleta,itamanho,ptamanho);//realiza o cruzameto e mostra a proxiam posição
+	preencher(npop,ptamanho,itamanho,marcador,elitismo);// preenche aleatoriamente o resto da população
+}
+//fim
+
+//inicio preenche individuos gemeos aleatoriamente
+void unicidade(individuo pop[],int ptamanho,int itamanho){
+	for(int i=0;i<ptamanho;i++){
+		if(pop[i].natural==pop[i+1].natural){
+			for(int k=0;k<itamanho;k++){
+				pop[i].binario[k]=rand()%2;
+			}
+		}
+	}
+   ordenar(pop,ptamanho);//garante que a população seja reordenada
+}
+//fim
+
+//inicio realiza a mutação na população
+void mutacao(individuo pop[],int ptamanho,int itamanho,int elitismo){
+	int q=0;
+	int d=0;
+	int p=0;
+	q=rand()%10;
+	for(int i=0;i<q;i++){
+		p=rand()%(ptamanho-elitismo-1)+elitismo;
+		d=rand()%itamanho;
+		if(pop[p].binario[d]==1){
+			pop[p].binario[d]=0;
+		}
+		if(pop[p].binario[d]==0){
+			pop[p].binario[d]=1;
+		}
+	}
+}
+//fim
+
+//inicio imprime o menu inicial
+void menu(void){
+	    cout << "******************************************************" <<endl;
+	    cout << "*            Algoritmo Genetico                      *" << endl;
+	    cout << "*                                         versão:1.0 *" << endl;
+	    cout << "*      Escolha uma dentre as opcoes abaixo           *"<< endl ;
+	    cout << "*       [0] Sair                                     *" << endl;
+		cout << "*       [1] Entrada de dados                         *" << endl;
+		cout << "*       [2] Alterar dados                            *" << endl;
+		cout << "*       [3] Gerar populacao inicial                  *" << endl;
+		cout << "*       [4] Otimizar                                 *" << endl;
+		cout << "*       [5] Visualizar resultados                    *" << endl;
+		cout << "******************************************************" <<endl;
+}
+//fim
+
+//inicio imprime o submenu 2
+void smenu2(int ptamanho,int ngeracoes,int elitismo,int phroleta){
+	cout << "Os dados do seu AG estão assim " << endl;
+	cout << "O tamannho da populacao e =" << ptamanho << endl;
+	cout << "O criterio de parada e o numero de geracoes, sendo =" << ngeracoes<< endl;
+	cout << "A porcentagem de elitismo e =" << elitismo << "%"<< endl;
+	cout << "A porcentagem para o cruzamento e =" << phroleta << "%"<< endl;
+	cout << endl << endl << endl << endl;
+	cout << "Escolha o que voce deseja alterar ou sair" << endl;
+	cout << "[0] voltar ao menu inicial"<< endl;
+	cout << "[1]Tamanho da populacao " << endl;
+	cout << "[2]Criterio de parada " << endl;
+	cout << "[3]Porcentagem de elitismo" << endl;
+	cout << "[4]Tipo de cruzamento" << endl;
+}
+//fim
+
+//inicio imprime o submenu 21 retornando o novo tamanho da populacao
+int smenu21(int ptamanho){
+	int a;
+	cout << "O tamannho da populacao e =" << ptamanho << endl;
+    cout << "Digite o novo tamanho da populacao"<< endl;
+    cin >> a;
+    ptamanho=a;
+    return ptamanho;
+}
+//fim
+
+//imprime o submenu 22 retornando o numero de gerações para o critério de parada
+int smenu22(int ngeracoes){
+	int a;
+	cout << "Infelizmente o unico criterio de parada implementado foi o numero de geracoes" << endl;
+	cout << "O numero de geracoes e= "<< ngeracoes<< endl;
+	cout << "Digite o novo numero de geracoes" << endl;
+	cin >> a;
+	ngeracoes=a;
+	return ngeracoes;
+}
+//fim
+
+//inicio imprime o submenu 23 retornando a porcentagem de elitismo
+int smenu23(int elitismo){
+	int a;
+	cout << "A porcentagem de elitismo e =" << elitismo << "%"<< endl;
+	cout << "Digite a nova porcentagem de elitismo" << endl;
+	cin >> a;
+	elitismo=a;
+	return elitismo;
+}
+//fim
+
+//imprime o submenu 24 retornando a porcentagem de individuos para o cruzamento
+int smenu24(int phroleta){
+	int a;
+	cout << "Infelizmente o unico tipo de cruzamento implementado foi uma variacao da roleta" << endl;
+	cout << "A porcentagem e= "<< phroleta<< endl;
+	cout << "Digite a nova porcentagem de cruzamento" << endl;
+	cin >> a;
+	phroleta=a;
+    return phroleta;
+}
+//fim
+
+//mantem o laço do menu de opcões
+int laco(int opcao){
+	menu();
+	cin >> opcao;
+     return opcao;
+}
+//fim
+
+//mantem o laço do submenu de opções
+int laco2(int opcao2,int ptamanho,int ngeracoes,int elitismo,int phroleta){
+	smenu2(ptamanho,ngeracoes,elitismo,phroleta);
+	cin >> opcao2;
+     return opcao2;
+}
+int main() {
+	int itamanho=100;        //valor do maximo tamanho de um individuo
+	int ptamanho=100;        //tamanho da população
+	int ngeracoes=100;       //numero de gerações
+	int elitismo=5;          //numero de individuos copiados devido ao elitismo
+	int phroleta=85;         //numero de individuos gerados a partir do cruzamento
+	int opcao=10;            //guarda o valor da opção escolhida no menu 1
+	int opcao2=10;           //guarda a opção escolhida nos submenus
+	int nvariaveis1;         //guarda o numero de variaveis
+	individuo pop[100];      //inicia a população
+	individuo npop[100];     //inicia a população que será preenchida com os operadores genéticos
+	variavel var[100];       //guardará as caractéristicas das variavéis
+    srand(time(0));
+//inicio entra no laço 0
+    while(opcao!=0){
+        opcao2=10;
+		opcao=laco(opcao);
+
+		if(opcao==1){
+			cout << "digite o numero de variaveis do seu problema";
+	    		cin >> nvariaveis1;
+	    		cout << endl;
+	    		itamanho=edados(nvariaveis1,var);
+	    }
+		//inicio entra nos submenus
+		if(opcao==2){
+	    	while(opcao2!=0){
+	    		opcao2=laco2(opcao2,ptamanho,ngeracoes,elitismo,phroleta);
+	    		if(opcao2==1){
+	    			ptamanho=smenu21(ptamanho);
+	    		}
+	    		if(opcao2==2){
+	    			ngeracoes=smenu22(ngeracoes);
+	    		}
+	    		if(opcao2==3){
+	    			elitismo=smenu23(elitismo);
+	    		}
+	    		if(opcao2==4){
+	    			phroleta=smenu24(phroleta);
+	    		}
+	    	}
+	    //fim
+		}
+		//inicio gera a população inicial
+	    if(opcao==3){
+	    	for(int i = 0; i <ptamanho; i++){
+	    	               pop[i].binario = new int[itamanho];
+	    	               pop[i].objetivo=0;
+	    	               pop[i].aptidao=0;
+	    	               pop[i].natural=0;
+	    	               npop[i].binario = new int [itamanho];
+	    	               npop[i].objetivo =0;
+	    	               npop[i].natural=0;
+	    	               npop[i].aptidao=0;
+	    	    }
+	    	ainiciar (pop,ptamanho,itamanho);
+	    	fobjetivo(pop,ptamanho,var);
+	    	aptidao(pop,ptamanho,var);
+	    	ordenar (pop,ptamanho);
+	    	exibir(pop,itamanho,ptamanho,var);
+	    	cout <<"Sua populacao foi iniciada com sucesso" << endl;
+	       }
+	    //fim
+
+	    //inico otimizar a população
+	    if(opcao==4){
+	    	int contador=0;
+	    	int contador2=0;
+	    	while(contador!=ngeracoes){
+	    		cout << "geraçao " << contador+1 << endl;
+	    		evoluir(npop,pop,phroleta,itamanho,ptamanho,elitismo);
+	    		copiar(npop,pop,ptamanho);
+	    		mutacao(pop,ptamanho,itamanho,elitismo);
+	    		avaliar(pop,itamanho,ptamanho);
+	    		fobjetivo(pop,ptamanho,var);
+	    		aptidao(pop,ptamanho,var);
+	    		ordenar(pop,ptamanho);
+	    		contador++;
+	    		contador2++;
+	    		if(contador2==3){
+	    			unicidade(pop,ptamanho,itamanho);
+	    			contador2=0;
+	    		}
+	    		exibir(pop,itamanho,ptamanho,var);
+	    	}
+	    }
+	    //fim
+
+	    //inicio exibe os individuos melhores e piores
+	    if(opcao==5){
+	    	exibir(pop,itamanho,ptamanho,var);
+	    	double g;
+	    	g=0;
+	    	cout << "total      =  " << g << endl;
+	    }
+	    else{
+	    	cout << "ops!" <<endl;
+	    }
+	  }
+	return 0;
+}
+//fim
